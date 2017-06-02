@@ -39,6 +39,8 @@
   </head>
   <body ng-app="htfmi" ng-controller="HowToFMIController"/>
     <header>
+    <a href="#!/"><img src="resources/images/logomin" alt=""></a>
+
       <nav>
         <ul>
           <li><a href="#!/">Начало</a></li>
@@ -48,17 +50,21 @@
           <li><a href="#!/jobs">Работа</a></li>
           <li><a href="#!/students-candidates">Кандидат-студенти</a></li>
         </ul>
+        <div>
+          <form class="form-inline my-2">
+            <input id="search" type="text" placeholder="Search">
+            <button id="search-button" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </form>
+          <a href="/" id="messages"><img src="resources/images/envelope.png" alt=""></span></a>
+        </div>
 
-        <form class="form-inline my-2 my-lg-0">
-          <input id="search" type="text" placeholder="Search">
-          <button id="search-button" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
-        </form>
       </nav>
     </header>
+    <article ng-view id="mainView"></article>
 
-    <div class="col-md-10 .col-lg-10 text-center .col-sm-12 .col-xs-12">
-      <article ng-view></article>
-    </div>
+    <footer>
+      
+    </footer>
   </body>
 
 

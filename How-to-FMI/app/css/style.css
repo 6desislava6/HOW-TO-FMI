@@ -3,26 +3,31 @@ body {
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;  
+
 }
 
 header, footer {
-    background-color: #03223d;
+    background-color: rgba(3, 34, 61, 0.8);
 }
-/* 
+
 footer {
     height: 200px;
     width: 100%;
-} */
+    margin-top: 60px;
+}
 
 nav {
-    padding: 20px;
+    width: 90%;
+    padding: 6px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+    flex-wrap: wrap;
 
 }
 nav ul {
+    padding: 0px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -32,23 +37,36 @@ nav ul {
 }
 
 nav ul > li {
+    flex-grow: 1;
     background-color: white;
     height: 60px;
     line-height: 60px;
-    padding-right: 20px;
-    padding-left: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
     font-size: 20px;
     text-align: center;
 }
-
-nav form {
+nav div {
     height: 60px;
-    width: 15%;
+    width: 25%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+}
+nav form {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+nav form input {
+    padding-left: 6px;
 }
 
 #search, nav > form > button {
@@ -65,15 +83,16 @@ nav form {
 }
 
 #search-button {
-    width: 20%;
+    height: 60px;
+    border-width: 0px;
+    background-color: rgb(186, 186, 186);
+    width: 30%;
     border-radius: 0px 10px 10px 0px;
 }
 
 nav ul > li:hover {
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
-
-
 }
 
 nav ul li a {
@@ -88,16 +107,50 @@ nav ul li:hover a  {
 
 nav ul li:first-child {
     border-radius: 10px 0px 0px 10px;
+    padding-left: 20px;
 }
 
 nav ul li:last-child {
     border-radius: 0px 10px 10px 0px;
+    padding-right: 20px;
 }
 
-@media screen and (max-width: 1000px) {
 
 
+#mainView {
+    display: block;
+    width: 90%;
+    margin: 10em auto;
+    width: 90%;
+    background-color: rgba(255,255,255,0.95);
+    border-radius: 10px;
+
+}
+#messages img {
+    height: 80px;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 0px;
+    top: 0;
+    position: fixed;
+    justify-content: center;
+}
+header > a > img {
+    width: 2em;
+}
+
+
+@media screen and (max-width: 810px) {
+    nav {
+        display: block;
+
+    }    
     nav ul {
+        width: 100%;
         flex-direction: column;
     }
     
@@ -111,15 +164,12 @@ nav ul li:last-child {
     nav ul li:last-child {
         border-radius: 0px 0px 10px 10px;
     }
-}
-
-@media screen and (max-width: 1199px) {
-    nav {
-        display: block;
-        flex-direction: column;
-    }
-    nav form {
-        width: 100%;
+    nav div form {
+        width: 80%;
         text-align: center;
+    }
+    
+    header {
+        position: inherit;
     }
 }
