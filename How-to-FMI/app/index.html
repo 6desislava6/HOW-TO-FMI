@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>How to FMI</title>
+
+    <!--libraries and packages -->
+    <!-- Bootstrap's JS изисква jquery -->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/underscore/underscore.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  
+    <!-- Styles -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Modules and routing-->
+    <script src="js/module.js"></script>
+    <script src="js/routing.js"></script>
+
+    <!--Controllers-->
+    <!--<script src="js/controllers/main-controller.js"></script> -->
+    
+    <script src="js/controllers/how-to-fmi-controller.js"></script>
+    <script src="js/controllers/calendar-controller.js"></script>
+    <script src="js/controllers/education-controller.js"></script>
+    <script src="js/controllers/forum-controller.js"></script>
+    <script src="js/controllers/jobs-controller.js"></script>
+    <script src="js/controllers/students-candidates-controller.js"></script>
+    
+
+    <!--Directives-->
+    <script src="js/directives/loader.js"></script>
+
+  </head>
+  <body ng-app="htfmi" ng-controller="HowToFMIController"/>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#!/">Начало</a></li>
+          <li><a href="#!/education">Обучение</a></li>
+          <li><a href="#!/calendar">Календар</a></li>
+          <li><a href="#!/forum">Форум</a></li>
+          <li><a href="#!/jobs">Работа</a></li>
+          <li><a href="#!/students-candidates">Кандидат-студенти</a></li>
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <input id="search" type="text" placeholder="Search">
+          <button id="search-button" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+        </form>
+      </nav>
+    </header>
+
+    <div class="col-md-10 .col-lg-10 text-center .col-sm-12 .col-xs-12">
+      <article ng-view></article>
+    </div>
+  </body>
+
+
+</html>

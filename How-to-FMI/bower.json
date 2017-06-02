@@ -1,0 +1,27 @@
+{
+  "name": "how-to-fmi",
+  "description": "",
+  "main": "index.js",
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "directory": "app/lib",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "bootstrap": "^3.3.7",
+    "angular-route": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "underscore": "^1.8.3",
+    "angular-bootstrap": "^2.5.0"
+  },
+  "resolutions": {
+    "angular": "^1.6.3"
+  }
+}
