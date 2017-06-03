@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/main-style.css">
     <link rel="stylesheet" href="css/part1.css">
     <link rel="stylesheet" href="css/time-icon-style.css">
+    <link rel="stylesheet" href="css/login-style.css">
 
     <!-- Modules and routing-->
     <script src="js/module.js"></script>
@@ -55,11 +56,11 @@
         document.getElementById("nav-dropdown").classList.toggle("show");
       }
     </script>
+
   </head>
   <body ng-app="htfmi" ng-controller="HowToFMIController"/>
     <header>
     <a href="#!/"><img src="resources/images/logo_mini.png" alt=""></a>
-
       <nav>
         <ul>
           <li><a href="#!/">Начало</a></li>
@@ -81,7 +82,7 @@
             <div id="nav-dropdown" class="dropdown-content">
               <a href="#">Блаблабла</a>
               <a href="#">Настройки</a>
-              <a href="#">Изход</a>
+              <a href="#!/login">Изход</a>
             </div>
           </div>
           <a href="#!/profile"><img src="resources/images/grumpy.jpg" alt=""></a>

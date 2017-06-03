@@ -29,6 +29,10 @@
 	margin-bottom: 6em;
 	width: 100%;
 }
+#main-events-notifications > div > a {
+	position: relative;
+	bottom: 0;
+}
 
 #main-events-notifications a:last-child {
 	display: block;
