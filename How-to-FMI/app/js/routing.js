@@ -11,7 +11,7 @@
             templateUrl: 'views/calendar.html',
             controller: 'CalendarController'
         }).when('/forum', {
-            templateUrl: 'views/forum.html',
+            templateUrl: 'views/forumMain.html',
             controller: 'ForumController'
         }).when('/jobs', {
             templateUrl: 'views/jobs.html',
