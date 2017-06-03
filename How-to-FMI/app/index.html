@@ -50,7 +50,11 @@
     <script type="text/javascript" src="lib/angular-ui-calendar/src/calendar.js"></script>
     <script type="text/javascript" src="lib/fullcalendar/dist/fullcalendar.min.js"></script>
     <script type="text/javascript" src="lib/fullcalendar/dist/gcal.js"></script>
-
+    <script>
+      function dropdown() {
+        document.getElementById("nav-dropdown").classList.toggle("show");
+      }
+    </script>
   </head>
   <body ng-app="htfmi" ng-controller="HowToFMIController"/>
     <header>
@@ -72,6 +76,14 @@
           </form>
           <a href="#!/notifications" id="notifications-bell"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a>
           <a href="/" id="messages"><img src="resources/images/envelope.png" alt=""></span></a>
+          <div class="dropdown">
+            <span onclick="dropdown()" class="glyphicon glyphicon-chevron-down dropbtn" aria-hidden="true"></span>
+            <div id="nav-dropdown" class="dropdown-content">
+              <a href="#">Блаблабла</a>
+              <a href="#">Настройки</a>
+              <a href="#">Изход</a>
+            </div>
+          </div>
           <a href="#!/profile"><img src="resources/images/grumpy.jpg" alt=""></a>
         </div>
 
