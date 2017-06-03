@@ -1,0 +1,29 @@
+.feed td img {
+	width: 10em;
+	height: 10em;
+}
+
+.feed td {
+	padding-left: 3em;
+}
+
+.feed h1 {
+	margin-top: 0px;
+}
+.feed > td {
+	margin: 1em;
+}
+
+.notifications-feed td img {
+	width: 3em;
+	height: 3em;
+}
+
+.notification-day {
+	text-align: center;
+	width: 20%;
+}
+.feed-title {
+	padding-top: 20px;
+	padding-left: 10%;
+}

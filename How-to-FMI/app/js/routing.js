@@ -13,12 +13,26 @@
         }).when('/forum', {
             templateUrl: 'views/forum.html',
             controller: 'ForumController'
+        }).when('/profile', {
+            templateUrl: 'views/profile.html',
+            controller: 'ForumController'
         }).when('/jobs', {
             templateUrl: 'views/jobs.html',
             controller: 'JobsController'
         }).when('/students-candidates', {
             templateUrl: 'views/students-candidates.html',
             controller: 'StudentsCandidatesController'
+        }).when('/education/disciplines', {
+            templateUrl: 'views/students-candidates.html',
+            controller: 'StudentsCandidatesController'
+        }).when('/education/disciplines/pchmi', {
+            templateUrl: 'views/students-candidates.html',
+            controller: 'StudentsCandidatesController'
+        }).when('/education/disciplines/reviews', {
+            templateUrl: 'views/students-candidates.html',
+            controller: 'StudentsCandidatesController'
         }).otherwise('/');
     }]);
 })();
+
+

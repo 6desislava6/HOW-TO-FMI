@@ -1,0 +1,15 @@
+<table class="feed">
+  <tr ng-repeat="new in news">
+    <td><img src="{{'resources/images/' + new.image}}"></td>
+    <td>
+      <h3>{{new.title}}</h3>
+      <h4><b>{{new.date}}</b></h4>
+      <p>{{new.content}}</p>
+    </td>
+    <td ng-if="new.day" class="notification-day">
+      <p>преди</p>  
+      <p>{{new.day[1]}}</p>  
+      <p>{{new.day[2]}}</p>   
+    </td>
+  </tr>
+</table>

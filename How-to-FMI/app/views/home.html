@@ -1,5 +1,27 @@
-<div style="height: 600px; font-size: 60px;">
-    
-    Home
+<div ng-controller="MainCtrl">
+    <div id="main-events-notifications">
+        <div id="notifications-box-home" class="mainView">
+          <h1 class="feed-title">Известия</h1>
+          <div feed class="notifications-feed"  id="notifications-feed-main" news="notifications"></div>    
+        </div>
+        <aside id="aside-calendar" ng-controller="SmallCalendarController" class="mainView">
+          <h2>Идващи събития</h2>
+          <table>
+              <tr ng-repeat="event in eventSources.events">
+                  <td>
+                      <p>{{ event.start[0] }}</p>
+                      <p>{{ event.start[1] }}</p>
+                      <p>{{ event.start[2] }}</p>
+                  </td>
+                  <td>{{ event.title }}</td>
+              </tr>
+          </table>
+      </aside>
+    </div>
 
+    <div class="mainView">
+        <h1 class="feed-title">Новини</h1>
+        <div feed id="news" news="news"></div>
+    </div>
 </div>
+

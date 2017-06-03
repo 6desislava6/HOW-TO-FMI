@@ -3,7 +3,7 @@ body {
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;  
-
+    font-size: 2em;
 }
 
 header, footer {
@@ -41,14 +41,12 @@ nav ul > li {
     background-color: white;
     height: 60px;
     line-height: 60px;
-    padding-right: 10px;
-    padding-left: 10px;
-    font-size: 20px;
+    padding-right: 0.6em;
+    padding-left: 0.6em;
     text-align: center;
 }
 nav div {
     height: 60px;
-    width: 25%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -78,7 +76,8 @@ nav form input {
 }
 
 #search {
-    width: 70%;
+    width: 150px;
+    padding-left: 2em;
     border-radius: 10px 0px 0px 10px;
 }
 
@@ -115,19 +114,22 @@ nav ul li:last-child {
     padding-right: 20px;
 }
 
-
-
-#mainView {
+.mainView {
     display: block;
+    margin: 0 auto;
     width: 90%;
-    margin: 10em auto;
     width: 90%;
     background-color: rgba(255,255,255,0.95);
     border-radius: 10px;
-
 }
-#messages img {
-    height: 80px;
+
+#contentView {
+    margin: 10em auto;
+}
+
+nav > div > a > img {
+    height: 60px;
+    margin-left: 1em;
 }
 
 header {
@@ -138,11 +140,31 @@ header {
     top: 0;
     position: fixed;
     justify-content: center;
+    z-index: 1;
 }
+
 header > a > img {
     width: 2em;
 }
 
+@media screen and (max-width: 1205px) {
+    nav div {
+        width: 100%;
+    }
+   
+    nav ul {
+        width: 100%;
+    }
+    
+    nav div form {
+        flex: flex-grow;
+        width: 90%;
+        text-align: center;
+    }
+    #search {
+        width: 100%;
+    }
+}
 
 @media screen and (max-width: 810px) {
     nav {
@@ -165,11 +187,17 @@ header > a > img {
         border-radius: 0px 0px 10px 10px;
     }
     nav div form {
-        width: 80%;
+        flex: flex-grow;
+        width: 90%;
         text-align: center;
     }
     
     header {
         position: inherit;
     }
+
+    nav div {
+        width: 100%;
+    }
 }
+

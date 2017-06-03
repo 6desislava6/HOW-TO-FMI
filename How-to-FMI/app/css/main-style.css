@@ -1,0 +1,22 @@
+#news {
+	padding-top: 3em;
+}
+
+#news tr td:last-child {
+	border-bottom: solid rgba(3, 34, 61, 0.8);
+	padding: 2em;
+}
+#notifications-box-home {
+	width: 60%;
+}
+#aside-calendar {
+	width: 30%;
+	padding-left: 2em;
+	padding-right: 2em;
+}
+#main-events-notifications{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin-bottom: 6em;
+}
