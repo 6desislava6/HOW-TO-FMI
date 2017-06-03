@@ -1,9 +1,10 @@
-body {
+html > body {
+    padding: 0px;
     background: url('../resources/images/fmi-darker.png') no-repeat center center fixed;
     background-size:     cover;
     background-repeat:   no-repeat;
     background-position: center center;  
-    font-size: 2em;
+    font-size: 1.6em;
 }
 
 header, footer {
@@ -117,9 +118,6 @@ nav ul li:last-child {
 .mainView {
     display: block;
     margin: 0 auto;
-    width: 90%;
-    margin: 10em auto;
-    width: 90%;
     background-color: rgba(255,255,255,0.95);
     border-radius: 10px;
 }
@@ -146,6 +144,45 @@ header {
 
 header > a > img {
     width: 2em;
+}
+
+nav > div > a:hover {
+    opacity: 0.6;
+}
+#notifications-bell {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+#notifications-bell  {
+    color: #fd9f1b;
+}
+
+#notifications-bell:hover  {
+     color: white; 
+     text-decoration:none; 
+     cursor:pointer;  
+}
+#notifications-bell:hover, t#notifications-bell:focus
+{
+  -webkit-animation: swing 0.6s ease-out;
+  animation: swing 0.6s ease-out;
+}
+
+@-webkit-keyframes swing {
+  0%   { -webkit-transform: rotate(0deg)  skewY(0deg); }
+  20%  { -webkit-transform: rotate(12deg) skewY(4deg); }
+  60%  { -webkit-transform: rotate(-9deg) skewY(-3deg); }
+  80%  { -webkit-transform: rotate(6deg)  skewY(-2deg); }
+  100% { -webkit-transform: rotate(0deg)  skewY(0deg); }
+}
+
+@keyframes swing {
+  0%   { transform: rotate(0deg)  skewY(0deg); }
+  20%  { transform: rotate(12deg) skewY(4deg); }
+  60%  { transform: rotate(-9deg) skewY(-3deg); }
+  80%  { transform: rotate(6deg)  skewY(-2deg); }
+  100% { transform: rotate(0deg)  skewY(0deg); }
 }
 
 @media screen and (max-width: 1205px) {

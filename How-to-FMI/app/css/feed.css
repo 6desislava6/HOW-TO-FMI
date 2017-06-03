@@ -2,6 +2,10 @@
 	width: 10em;
 	height: 10em;
 }
+.feed td img:hover {
+	opacity: 0.6;
+
+}
 
 .feed td {
 	padding-left: 3em;
@@ -23,7 +27,34 @@
 	text-align: center;
 	width: 20%;
 }
+
+.notification-day strong {
+	display: block;
+}
+
 .feed-title {
 	padding-top: 20px;
 	padding-left: 10%;
+}
+
+
+@media screen and (max-width: 810px) {
+/* 	.feed tr > td:first-child  {
+	display: none;
+} */
+	.feed tr {
+		width: 100%;
+	}
+	.feed td {
+		display: table-row;
+		text-align: center;
+	}    
+	.feed tr td:last-child {
+		border-bottom: solid rgba(3, 34, 61, 0.8);
+		padding: 2em;
+	}
+
+	.feed tr:last-child td:last-child {
+		border-bottom: none;
+	}
 }

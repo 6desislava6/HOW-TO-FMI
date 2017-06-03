@@ -3,7 +3,7 @@
     angular.module('htfmi').config(['$routeProvider', function Router($routeProvider) {
         $routeProvider.when('/', {
             templateUrl: 'views/home.html',
-            controller: 'HowToFMIController'
+            controller: 'MainCtrl'
         }).when('/education', {
             templateUrl: 'views/education.html',
             controller: 'EducationController'
@@ -31,6 +31,9 @@
         }).when('/education/disciplines/reviews', {
             templateUrl: 'views/students-candidates.html',
             controller: 'StudentsCandidatesController'
+        }).when('/notifications', {
+            templateUrl: 'views/notifications.html',
+            controller: 'NotificationsController'
         }).otherwise('/');
     }]);
 })();

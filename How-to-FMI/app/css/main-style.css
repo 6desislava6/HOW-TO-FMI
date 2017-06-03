@@ -6,17 +6,56 @@
 	border-bottom: solid rgba(3, 34, 61, 0.8);
 	padding: 2em;
 }
+
+#news tr:last-child td:last-child {
+	border-bottom: none;
+}
+
 #notifications-box-home {
 	width: 60%;
 }
+
 #aside-calendar {
 	width: 30%;
 	padding-left: 2em;
 	padding-right: 2em;
 }
-#main-events-notifications{
+
+#main-events-notifications {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-bottom: 6em;
+	width: 100%;
+}
+
+#main-events-notifications a:last-child {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	padding-top: 1em;	
+	padding-bottom: 1em;	
+}
+
+@media screen and (max-width: 810px) {
+	#main-events-notifications {
+		flex-direction: column;
+	}
+
+	#notifications-box-home {
+		width: 90%;
+	}
+
+	#aside-calendar {
+		width: 90%;
+		margin-top: 40px;
+		text-align: center;
+		padding: 1em;
+	}
+}
+
+#home-view {
+	width: 90%;
+	margin: 0 auto;
 }
