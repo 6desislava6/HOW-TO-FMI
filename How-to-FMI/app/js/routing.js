@@ -34,6 +34,12 @@
         }).when('/notifications', {
             templateUrl: 'views/notifications.html',
             controller: 'NotificationsController'
+        }).when('/forum/thread', {
+            templateUrl: 'views/forum.html',
+            controller: 'ForumController'
+        }).when('/forum/empty', {
+            templateUrl: 'views/404.html',
+            controller: 'ForumController'
         }).otherwise('/');
     }]);
 })();
