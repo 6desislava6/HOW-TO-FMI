@@ -1,7 +1,7 @@
 'use strict';
 angular.module('htfmi')
     .controller('SmallCalendarController', ['$scope', function ($scope) {
-        $scope.eventSources = {
+/*        $scope.eventSources = {
             events: [
                 {
                     title: 'Представяне на проект по ПЧМИ',
@@ -16,5 +16,5 @@ angular.module('htfmi')
                     start: ['юни', '23', '2017']
                 }
             ]
-        };
+        };*/
 }]);

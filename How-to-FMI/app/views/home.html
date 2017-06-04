@@ -5,22 +5,11 @@
           <div feed class="notifications-feed"  id="notifications-feed-main" news="notifications"></div>    
           <a href="#!/notifications">Преглед на всички известия</a>
         </div>
-        <aside id="aside-calendar" ng-controller="SmallCalendarController" class="mainView">
+        <aside id="aside-calendar" class="mainView">
           <h2>Предстоящи събития</h2>
-          <table>
-              <tr ng-repeat="event in eventSources.events">
-                  <td>
-                    <time class="icon">
-                      <em>{{ event.start[0] }}</em>
-                      <strong>{{ event.start[1] }}</strong>
-                      <span>{{ event.start[2] }}</span>
-                    </time>
-                  </td>
-                  <td>{{ event.title }}</td>
-              </tr>
-          </table>
+          <div smallcalendar event-sources="eventSources"></div>
           <a href="#!/schedule">Преглед на целия график</a>
-      </aside>
+        </aside>
     </div>
 
     <div class="mainView">

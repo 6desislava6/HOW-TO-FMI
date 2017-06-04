@@ -1,0 +1,12 @@
+<table>
+    <tr ng-repeat="event in eventSources.events">
+        <td>
+          <time class="icon">
+            <em>{{ event.start[0] }}</em>
+            <strong>{{ event.start[1] }}</strong>
+            <span>{{ event.start[2] }}</span>
+          </time>
+        </td>
+        <td>{{ event.title }}</td>
+    </tr>
+</table>

@@ -149,6 +149,7 @@ header > a img {
 nav > div > a:hover {
     opacity: 0.6;
 }
+
 #notifications-bell {
     font-size: 30px;
     text-decoration: none;

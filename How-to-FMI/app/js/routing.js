@@ -35,7 +35,8 @@
             templateUrl: 'views/notifications.html',
             controller: 'NotificationsController'
         }).when('/login', {
-            templateUrl: 'views/login.html'
+            templateUrl: 'views/login.html',
+            controller: 'LoginController' 
         }).otherwise('/');
     }]);
 })();
