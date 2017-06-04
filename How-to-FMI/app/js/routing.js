@@ -51,6 +51,23 @@
             controller: 'MainCtrl'
         }).when('/login', {
             templateUrl: 'views/login.html'
+        })
+        // Kremi
+        .when('/register', {
+            templateUrl: 'views/register.html',
+            controller: 'RegisterController'
+        }).when('/faq', {
+            templateUrl: 'views/faq.html',
+            controller: 'FAQController'
+        }).when('/students-info', {
+            templateUrl: 'views/students-info.html',
+            controller: 'StudentsInfoController'
+        }).when('/materials', {
+            templateUrl: 'views/materials.html',
+            controller: 'MaterialsController'
+        }).when('/all-courses', {
+            templateUrl: 'views/all-courses.html',
+            controller: 'AllCoursesController'
         }).otherwise('/');
     }]);
 })();

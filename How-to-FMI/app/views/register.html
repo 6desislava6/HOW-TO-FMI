@@ -1,0 +1,20 @@
+<div ng-controller="RegisterController" class="register-div">
+    <h1>Регистрация</h1>
+
+    <form name="register-form" class="register-form">
+        Имейл/потребителско име: <span style="color: red">*</span>
+        <br>
+        <input type="text" placeholder="Имейл/потребителско име" autofocus required oninvalid="this.setCustomValidity('Полето е задължително.')" oninput="setCustomValidity('')">
+        <br>
+        Парола: <span style="color: red">*</span>
+        <br>
+        <input type="password" placeholder="Парола" required oninvalid="this.setCustomValidity('Полето е задължително.')" aria-required="true" dir="auto" title oninput="setCustomValidity('')">
+        
+        <br>
+        Повтори парола: <span style="color: red">*</span>
+        <br>
+        <input type="password" placeholder="Повтори парола" required oninvalid="this.setCustomValidity('Полето е задължително.')" oninput="setCustomValidity('')">
+        <br>
+        <input type="submit" value="Регистрация">
+    </form>
+</div>
