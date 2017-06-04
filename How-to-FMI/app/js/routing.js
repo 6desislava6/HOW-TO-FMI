@@ -46,6 +46,9 @@
         }).when('/grades/electives', {
             templateUrl: 'views/gradesElectives.html',
             controller: 'ForumController'
+        }).when('/contacts', {
+            templateUrl: 'views/contacts.html',
+            controller: 'MainCtrl'
         }).otherwise('/');
     }]);
 })();
