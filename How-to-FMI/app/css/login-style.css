@@ -1,0 +1,52 @@
+aside.login-column {
+	width: 30%;
+	display: inline-block;
+	margin-right: 2em;
+}
+
+aside.login-column div.mainView {
+	padding: 3em;
+	margin-bottom: 3em;
+}
+
+#big-logo {
+	width: 60%;
+}
+
+#big-logo {
+	margin-top: 6em;
+	vertical-align: top;
+}
+@media screen and (max-width: 810px) {
+	#big-logo {
+		width: 100%;
+	}
+	aside.login-column {
+		width: 70%;
+	}
+}
+
+#login-view {
+	text-align: center;
+}
+
+#login-view aside div {
+	text-align: center;
+}
+
+#login-view aside input {
+	display: block;
+	width: 100%;
+	padding: 1em;
+	margin-bottom: 2em;
+}
+
+#login-view aside input[type="submit"], #login-view aside button {
+	background-color: rgba(3, 34, 61, 0.8);
+	border: none;
+	border-radius: 10px;
+	padding: 1.1em;
+	color: white;
+	font-size: 24px;
+	width: 100%;
+}

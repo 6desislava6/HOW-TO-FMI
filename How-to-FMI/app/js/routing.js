@@ -49,6 +49,8 @@
         }).when('/contacts', {
             templateUrl: 'views/contacts.html',
             controller: 'MainCtrl'
+        }).when('/login', {
+            templateUrl: 'views/login.html'
         }).otherwise('/');
     }]);
 })();
