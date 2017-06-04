@@ -16,4 +16,9 @@ angular.module('htfmi')
 	    }
 	  }
 	}
+
+
+	$scope.translations = {
+		'education': 'Обучение'
+	}
 }]);	
