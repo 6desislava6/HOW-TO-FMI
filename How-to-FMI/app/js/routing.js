@@ -25,9 +25,9 @@
         }).when('/education/disciplines', {
             templateUrl: 'views/students-candidates.html',
             controller: 'StudentsCandidatesController'
-        }).when('/education/disciplines/pchmi', {
-            templateUrl: 'views/students-candidates.html',
-            controller: 'StudentsCandidatesController'
+        }).when('/education/disciplines/:courseName', {
+            templateUrl: 'views/course.html',
+            controller: 'CourseController'
         }).when('/education/disciplines/reviews', {
             templateUrl: 'views/students-candidates.html',
             controller: 'StudentsCandidatesController'

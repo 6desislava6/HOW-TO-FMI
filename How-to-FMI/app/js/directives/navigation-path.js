@@ -6,12 +6,16 @@ angular.module('htfmi')
             replace: true,
             templateUrl: 'views/directives/navigation-path.html',
             controller: ['$scope', '$location', function ($scope, $location) {
-            	console.log($scope.translations);
+   				
+				var translations = {
+					'education': 'Обучение',
+					'disciplines': 'Дисциплини',
+				}
+
             	var places = $location.path().split('/').filter((v) => { return v!=='' });
-            	console.log(places);
-            	
+
             	$scope.translatedPlace =_.map(places, (place) => {
-            		return $scope.translations[place];
+            		return place in translations ? translations[place] : place;
             	});
 		  }]
         };
