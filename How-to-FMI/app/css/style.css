@@ -12,9 +12,10 @@ header, footer {
 }
 
 footer {
-    height: 200px;
+    height: 12em;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 7em;
+
 }
 
 nav {
