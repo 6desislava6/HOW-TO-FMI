@@ -40,6 +40,12 @@
         }).when('/forum/empty', {
             templateUrl: 'views/404.html',
             controller: 'ForumController'
+        }).when('/grades', {
+            templateUrl: 'views/gradesMain.html',
+            controller: 'ForumController'
+        }).when('/grades/electives', {
+            templateUrl: 'views/gradesElectives.html',
+            controller: 'ForumController'
         }).otherwise('/');
     }]);
 })();
