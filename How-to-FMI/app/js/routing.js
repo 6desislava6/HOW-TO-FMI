@@ -34,9 +34,44 @@
         }).when('/notifications', {
             templateUrl: 'views/notifications.html',
             controller: 'NotificationsController'
+        }).when('/forum/thread', {
+            templateUrl: 'views/forum.html',
+            controller: 'ForumController'
+        }).when('/forum/empty', {
+            templateUrl: 'views/404.html',
+            controller: 'ForumController'
+        }).when('/grades', {
+            templateUrl: 'views/gradesMain.html',
+            controller: 'ForumController'
+        }).when('/grades/electives', {
+            templateUrl: 'views/gradesElectives.html',
+            controller: 'ForumController'
+        }).when('/contacts', {
+            templateUrl: 'views/contacts.html',
+            controller: 'MainCtrl'
         }).when('/login', {
             templateUrl: 'views/login.html',
             controller: 'LoginController' 
+        }).when('/forum/comments', {
+            templateUrl: 'views/comments.html',
+            controller: 'MainCtrl'
+        })
+        // Kremi
+        .when('/register', {
+            templateUrl: 'views/register.html',
+            controller: 'RegisterController'
+        }).when('/faq', {
+            templateUrl: 'views/faq.html',
+            controller: 'FAQController'
+        }).when('/students-info', {
+            templateUrl: 'views/students-info.html',
+            controller: 'StudentsInfoController'
+        }).when('/materials', {
+            templateUrl: 'views/materials.html',
+            controller: 'MaterialsController'
+        }).when('/all-courses', {
+            templateUrl: 'views/all-courses.html',
+            controller: 'AllCoursesController'
         }).otherwise('/');
     }]);
 })();

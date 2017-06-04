@@ -1,0 +1,172 @@
+/* --------------- Register --------------- */
+.register-div {
+	width: 30%;
+	background-color: rgba(255,255,255,0.95);
+	border-radius: 2rem;
+	display: flex;
+	margin: 0 auto;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding-left: 3.5rem;
+	padding-right: 3.5rem;
+	margin-bottom: 20rem;
+}
+
+.register-div  input {
+	width: 100%;
+}
+
+.register-div > h1 {
+	width: 100%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	align-self: center;
+}
+
+.register-form {
+	width: 100%;
+	min-width: 16em;
+	font-size: 2rem;
+	position: relative;
+	padding-bottom: 2em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-indent: 0;
+	align-self: center;
+	align-items: center;
+}
+
+input[type=text], input[type=password] {
+    
+    padding: .5rem .75rem;
+    margin-top: .7rem;
+    margin-bottom: 0.7rem;
+    box-sizing: border-box;
+    border-radius: 8px;
+    align-self: center;
+    align-content: center;
+}
+
+input[type=submit], input[type=button] {
+	border-radius: 10px;
+	background-color: rgba(3, 34, 61, 0.9);
+	border-color: auto;
+	color: white;
+	font-size: 2rem;
+	padding: .5rem .35rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+	.register-div {
+	width: 50%;
+	border-radius: 2rem;
+	margin-left: 25%;
+	}
+
+	.register-form {
+	width: 10%;
+	min-width: 30rem;
+	position: relative;
+	left: 5%;
+	padding-bottom: 2em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-indent: 0;
+	float:left;
+}
+}
+
+@media only screen and (max-width: 650px) {
+	.register-div {
+	width: 80%;
+	border-radius: 2rem;
+	margin-left: 10%;
+	}
+
+	.register-form {
+	width: 10%;
+	min-width: 30rem;
+	position: relative;
+	left: 5%;
+	padding-bottom: 2em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	text-indent: 0;
+	float:left;
+}
+}
+
+/* --------------- F.A.Q., StudentsInfo and Materials --------------- */
+.faq-div, .st-info-div, .materials-div {
+	width: 90%;
+	background-color: rgba(255,255,255,0.95);
+	border-radius: 2rem;
+	margin-left: 5%;
+	padding-left: 5%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.faq-div > h1 {
+	padding-bottom: 2%;
+}
+
+#row {
+	vertical-align: top;
+	padding: 0;
+}
+
+.square-section {
+	font-size: 2rem;
+	background-color: white;
+	border-radius: 16px;
+	border-color: rgba(3, 34, 61, 0.8);
+	padding: 0;
+	margin-bottom: 3rem;
+	border: 3px solid rgba(3, 34, 61, .8);
+}
+
+.square-section > div {
+	font-size: 2rem;
+	padding-left: 2rem;
+	padding-right: 2rem;
+	padding-top: 0;
+	padding-bottom: 1rem;
+	text-indent: 2rem;
+}
+
+.square-section > h3 {
+	text-indent: 1.5rem;
+	background-color: rgba(3, 34, 61, .8);
+	color: white;
+	padding: 1rem;
+}
+
+/* --------------- Courses --------------- */
+
+.courses-div {
+	width: 90%;
+	margin-left: 5%;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.courses-div > #row > div {
+	background-color: rgba(255,255,255,0.95);
+	border-radius: 2rem;
+}
+
+#filters {
+	font-size: 1.5rem;
+}
+
+.single-course-div {
+	
+}

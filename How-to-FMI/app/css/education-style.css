@@ -3,6 +3,8 @@
 	flex-direction: row;
 	font-size: 1.4em;
 	width: 90%;
+	padding-left: 0px;
+	padding-right: 0px;
 }
 #education-filter div {
 	width: 33.33333%;
