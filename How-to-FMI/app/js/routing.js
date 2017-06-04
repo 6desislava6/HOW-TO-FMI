@@ -51,6 +51,9 @@
             controller: 'MainCtrl'
         }).when('/login', {
             templateUrl: 'views/login.html'
+        }).when('/forum/comments', {
+            templateUrl: 'views/comments.html',
+            controller: 'MainCtrl'
         })
         // Kremi
         .when('/register', {
