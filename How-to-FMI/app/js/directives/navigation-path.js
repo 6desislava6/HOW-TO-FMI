@@ -9,7 +9,8 @@ angular.module('htfmi')
    				
 				var translations = {
 					'education': 'Обучение',
-					'disciplines': 'Дисциплини',
+                    'disciplines': 'Дисциплини',
+					'notifications': 'Известия'
 				}
 
             	var places = $location.path().split('/').filter((v) => { return v!=='' });

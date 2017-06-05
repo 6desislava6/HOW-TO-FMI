@@ -194,7 +194,10 @@ nav > div > a:hover {
     nav div {
         width: 100%;
     }
-   
+    
+    #contentView {
+        margin-top: 10em;
+    }
     nav ul {
         width: 100%;
     }
@@ -241,6 +244,9 @@ nav > div > a:hover {
 
     nav div {
         width: 100%;
+    }
+    #contentView {
+        margin-top: 6em;
     }
 }
 
