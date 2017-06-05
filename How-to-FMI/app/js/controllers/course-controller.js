@@ -1,7 +1,7 @@
 'use strict';
 angular.module('htfmi')
     .controller('CourseController', ['$scope', '$route', function ($scope, $route) {
-	var id = $route.current.params.courseName;
+		var id = $route.current.params.courseName;
 
 		var courses = {
 			elixir: {
