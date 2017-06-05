@@ -1,8 +1,8 @@
 <div navigationpath></div>
 <div id="course-view">
 	<ul id="course-menu">
-		<li><button ng-click="changeCourseContent('annotation')">Анотация на курс</button></li>
-		<li><button ng-click="changeCourseContent()">Преподаватели</button></li>
+		<li><button class="box" ng-click="changeCourseContent('annotation')">Анотация на курс</button></li>
+		<li><button ng-click="changeCourseContent('lecturers')">Преподаватели</button></li>
 		<li><button ng-click="changeCourseContent('materials')">Материали</button></li>
 		<li><button ng-click="changeCourseContent()">Задания и контролни</button></li>
 		<li><button ng-click="changeCourseContent('discussion')">Мнения за курса</button></li>
@@ -10,8 +10,8 @@
 	</ul>
 
 	<div class="mainView">
-		<h1>{{course.name}}</h1>
-		<img src="resources/images/elixir.png" alt="">
+		<h1>{{course.name}} <img src="resources/images/elixir.png" alt=""></h1>
+		
 		<div ng-show="showContent.annotation">
 			<h2>Анотация</h2>
 			<hr>
@@ -28,14 +28,50 @@
 		<div ng-show="showContent.materials">
 			<h2>Материали</h2>
 			<hr>
+			<article>
+				<form action="/action_page.php" method="get">
+					<h2>Седмица 1</h2> 
+					<input type="checkbox"> <label for="">Лекция 1 - Въведение</label> <br>
+					<input type="checkbox"> <label for="">Лекция 1 - слайдове </label> <br>
+					<input type="checkbox"> <label for="">Статия - критичен анализ на дисциплината</label> <br>
+					<h2>Седмица 2</h2> 	
+					<input type="checkbox"> <label for="">Лекция 1 - Въведение</label> <br>
+					<input type="checkbox"> <label for="">Лекция 1 - слайдове </label> <br>
+					<input type="checkbox"> <label for="">Статия - критичен анализ на дисциплината</label> <br>
+					<input type="checkbox"> <label for="">Лекция 1 - Въведение</label> <br>
+					<input type="checkbox"> <label for="">Лекция 1 - слайдове </label> <br>
+					<input type="checkbox"> <label for="">Статия - критичен анализ на дисциплината</label> <br>
+					<input type="checkbox"> <label for="">Лекция 1 - Въведение</label> <br>
+					<input type="checkbox"> <label for="">Лекция 1 - слайдове </label> <br>
+					<input type="checkbox"> <label for="">Статия - критичен анализ на дисциплината</label> <br>
+					<input type="submit" value="Изтегли избраните">
+					</form>
+			</article>
 		</div>
 		<div ng-show="showContent.discussion">
 			<h2>Мнения за курса</h2>
 			<hr>
+			
+			<article id="discussion">
+				<div class="opinion-course" ng-repeat="opinion in discussion">
+					<div>
+						<img class="profilepic" src="resources/images/grumpy.jpg" alt="">
+				
+						<span class="rating">
+							<a href=""><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
+							{{opinion.rating}}
+							<a href=""><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+						</span>
+						<div class="content">
+							{{opinion.content}}
+						</div>
+					</div>
+					<p><a href="">Добави коментар</a></p>
+				</div>				
 
+			</article>
 		</div>
 	</div>
-
-
-	
 </div>
+
+ 
