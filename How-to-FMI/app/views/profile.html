@@ -1,0 +1,52 @@
+<div id="profileView">
+	<div class="mainView" id="profile-content">
+		<h1>{{course.name}}
+		<div ng-show="showContent.annotation" id="profile-profile">
+			<h2>Профил</h2>
+			<hr>
+			<article>
+				<div class="input-group">
+					<form action="" >
+						<label for="">Име</label>
+						<input class="form-control" type="text">
+						<label for="">Фамилия</label>
+						<input class="form-control" type="text">
+						<label for="">Научна степен</label>
+						<input class="form-control" type="text">
+						<label for="">Специалност </label>
+						<input class="form-control" type="text">
+						<label for="">Курс</label>
+						<input class="form-control" type="number">
+						<label for="">Качи CV</label>
+						<input type="file" value="Качи CV">
+						<label for="">Рождена дата</label>
+						<input class="form-control" type="date">
+					</form>
+					<button>Обнови профила</button>
+				</div>
+				<div>
+					<img src="resources/images/grumpy.jpg" alt="">
+					<button><input type="file" value="Качи CV">Качи снимка</button>
+				</div>
+			</article>
+		</div>
+		<div ng-show="showContent.profile">
+			Профил
+		</div>
+		<div ng-show="showContent.intergraion">
+			Интеграция с Мудъл
+		</div>
+		<div ng-show="showContent.changePass">
+			Промяна на парола
+		</div>
+	</div>
+	<ul id="course-menu">
+		<li><button class="box" ng-click="changeCourseContent('profile')">Профил</button></li>
+		<li><button class="box" ng-click="changeCourseContent('intergraion')">Интеграция с Мудъл</button></li>
+		<li><button class="box" ng-click="changeCourseContent('changePass')">Смяна на парола</button></li>
+		<li><a href="#!/grades"><button>Оценки</button></a></li>
+		<li><a href="#!/grades/electives"><button>Оценки на избираеми</button></a></li>
+	</ul>
+</div>
+
+ 

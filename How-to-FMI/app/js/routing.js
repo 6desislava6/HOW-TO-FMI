@@ -12,9 +12,9 @@
         }).when('/forum', {
             templateUrl: 'views/forumMain.html',
             controller: 'ForumController'
-        }).when('/profile', {
+        }).when('/profile/:profilemenu', {
             templateUrl: 'views/profile.html',
-            controller: 'ForumController'
+            controller: 'ProfileController'
         }).when('/jobs', {
             templateUrl: 'views/jobs.html',
             controller: 'JobsController'

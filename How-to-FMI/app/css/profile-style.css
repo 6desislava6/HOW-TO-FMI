@@ -1,0 +1,68 @@
+#profile-content {
+	width: 60%;
+	float: right;
+	margin-right: 6em;
+}
+
+#profile-profile article {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#profile-profile article > div {
+	width: 40%;
+	display: flex;
+	flex-direction: column;
+}
+
+#profile-profile article div img {
+	width: 100%;
+}
+
+#profile-profile article > div label, #profile-profile article > div input, #profile-profile article > div button {
+	font-size: 0.6em;
+	width: 100%;
+	margin-bottom: 0.3em;
+}
+
+#profile-profile article > div button {
+	margin-top: 2em;
+	background-color: rgba(3, 34, 61, 0.8);
+	border: none;
+	border-radius: 10px;
+	padding: 1.1em;
+	color: white;
+	font-size: 24px;
+	width: 100%;
+}
+
+@media screen and (max-width: 810px) {
+	#profile-profile article > div {
+		width: 100%;
+	}
+
+	#profile-content {
+		width: 100%;
+		display: block;
+		float: none;
+
+	}
+
+	#course-menu {
+		display: block;
+		float: none;
+		width: 100%;
+	}
+}
+
+#course-menu {
+	padding: 0px;
+	margin-top: 2em;
+	background-color: red;
+	list-style-type: none;
+}
+
+#profileView {
+	margin-bottom: 3em;
+}

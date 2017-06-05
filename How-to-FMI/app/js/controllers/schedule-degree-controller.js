@@ -1,6 +1,6 @@
 'use strict';
 angular.module('htfmi')
-    .controller('ScheduleDegree', ['$scope', '$routeParams', function ($scope, $routeParams) {
+    .controller('ScheduleDegree', ['$scope', '$routeParams', '$window', function ($scope, $routeParams, $window) {
     	var degree = $routeParams.degree;
     	var DEGREES = {
     		'software_engineering': [],
@@ -27,9 +27,11 @@ angular.module('htfmi')
 	        ]
     	}];
 
-    	if (! degree in DEGREES) {
-
+    	if (!(degree in DEGREES)) {
+    		console.log('here');
+    		$window.location.href = '#!/missing';
     	}
+    	
     	$scope.openInfo = function(event)
 		{	
 			$scope.clickedEvent = true;
