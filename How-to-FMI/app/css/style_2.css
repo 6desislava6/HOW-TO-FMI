@@ -168,8 +168,8 @@ input[type=submit], input[type=button] {
 	font-size: 1.5rem;
 }
 
-.single-course-div {
-	
+.single-course-div:hover {
+	background-color: white;
 }
 
 #filters > h4 {
