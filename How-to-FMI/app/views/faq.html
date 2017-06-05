@@ -1,18 +1,13 @@
-<div ng-controller="FAQController" class="faq-div">
-	<h1>FAQ</h1>
+<div navigationpath></div>
+<div class="faq-div">
+	<h1>Често задавани въпроси</h1>
 	<div id="row">
 		<div class="square-section col-md-5 col-sm-5 col-xs-11 col-xs-preset-1">
 			<h3>Кандидатстване</h3>
 			<div>
-				<ul>
+				<ul ng-repeat="question in application_items">
 					<li>
-						Каква е процедурата по кандидатстване във ФМИ?
-					</li>
-					<li>
-						Кога се провеждат конкурсните изпити?
-					</li>
-					<li>
-						Какъв набор от документи е нужен за записване в дадена специалност?
+						<a ng-href="{{question.ref}}">{{ question.question }}</a>
 					</li>
 				</ul>
 			</div>
@@ -21,12 +16,9 @@
 		<div class="square-section col-md-5 col-sm-5 col-md-offset-1 col-sm-offset-1 col-xs-11 col-xs-preset-1">
 			<h3>Избираеми дисциплини</h3>
 			<div>
-				<ul>
+				<ul ng-repeat="question in electives">
 					<li>
-						Какви и колко избираеми дисциплини е нужно да взема по време на следването си?
-					</li>
-					<li>
-						Каква е процедурата по записване и отписване на избираеми дисциплини?
+						<a ng-href="{{question.ref}}">{{ question.question }}</a>
 					</li>
 				</ul>
 			</div>
@@ -36,21 +28,9 @@
 		<div class="square-section col-md-5 col-sm-5  col-xs-11 col-xs-preset-1">
 			<h3>Настаняване и общежития</h3>
 			<div>
-				<ul>
+				<ul ng-repeat="question in accomodation_questions">
 					<li>
-						Имам ли право да живея в общежитие?
-					</li>
-					<li>
-						Каква е процедурата по кандидатстване за общежитие?
-					</li>
-					<li>
-						Имам брат/сестра от друг ВУЗ, с който/която искаме да живеем в едно общежитие. Каква е процедурата в този случай?
-					</li>
-					<li>
-						Какъв е редът за настаняване в общежитие?
-					</li>
-					<li>
-						Какъв е редът за напускане на общежитие?
+						<a ng-href="{{question.ref}}">{{ question.question }}</a>
 					</li>
 				</ul>
 			</div>
@@ -58,15 +38,9 @@
 		<div class="square-section col-md-5 col-sm-5 col-md-offset-1 col-sm-offset-1 col-xs-11 col-xs-preset-1">
 			<h3>Стипендии</h3>
 			<div>
-				<ul>
+				<ul ng-repeat="question in scholarship_question">
 					<li>
-						Какви видове стипендии мога да получавам по време на следването си?
-					</li>
-					<li>
-						Каква е процедурата по кандидатстване за стипендия?
-					</li>
-					<li>
-						Как се определя средният успех (при кандидатстване за стипендия за успех)?
+						<a ng-href="{{question.ref}}">{{ question.question }}</a>
 					</li>
 				</ul>
 			</div>

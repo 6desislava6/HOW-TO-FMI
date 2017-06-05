@@ -17,7 +17,12 @@ angular.module('htfmi')
                     'computer_science': 'Компютърни науки',
                     'informatics': 'Информатика',
                     'informatics systems': 'Информационни системи',
-                    'applicable_mathematics': 'Приложна математика'
+                    'applicable_mathematics': 'Приложна математика',
+                    // Kremi
+                    'students-info': 'За кандидат-студенти',
+                    'all-courses': 'Курсове',
+                    'faq': 'Често задавани въпроси',
+                    'materials': 'Материали',
                 }
 
             	var places = $location.path().split('/').filter((v) => { return v!=='' });
