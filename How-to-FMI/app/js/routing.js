@@ -8,8 +8,7 @@
             templateUrl: 'views/education.html',
             controller: 'EducationController'
         }).when('/calendar', {
-            templateUrl: 'views/calendar.html',
-            controller: 'CalendarController'
+            templateUrl: 'views/calendar.html'
         }).when('/forum', {
             templateUrl: 'views/forumMain.html',
             controller: 'ForumController'
@@ -19,9 +18,6 @@
         }).when('/jobs', {
             templateUrl: 'views/jobs.html',
             controller: 'JobsController'
-        }).when('/students-candidates', {
-            templateUrl: 'views/students-candidates.html',
-            controller: 'StudentsCandidatesController'
         }).when('/education/disciplines', {
             templateUrl: 'views/students-candidates.html',
             controller: 'StudentsCandidatesController'
