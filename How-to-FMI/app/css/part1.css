@@ -81,3 +81,28 @@ hr {
 	height:45px; 
 	padding-left:15px;
 }
+
+input[type="text"].form-control {
+    margin-top: 0px;
+}
+
+input[type="text"].form-control {
+    margin-top: 0px;
+}
+div.container {
+    width: 90%;
+}
+#evolution .progress {
+    width: 100%;
+}
+#evolution {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#evolution img {
+    width: 100%;
+}
+#google-calendar {
+    width: 100%;
+    text-align: center;
