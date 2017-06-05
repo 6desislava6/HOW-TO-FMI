@@ -67,3 +67,6 @@ hr {
 }
 .btn-circle span { padding-right: 6px; }
 .embed-responsive { margin-bottom: 20px; }
+input[type="text"].form-control {
+    margin-top: 0px;
+}
