@@ -77,6 +77,9 @@
         }).when('/all-courses', {
             templateUrl: 'views/all-courses.html',
             controller: 'AllCoursesController'
+        }).when('/jobs', {
+            templateUrl: 'views/jobs.html',
+            controller: 'JobsController'
         }).otherwise('/missing');
     }]);
 })();

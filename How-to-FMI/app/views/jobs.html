@@ -1,0 +1,33 @@
+<div navigationpath></div>
+<div class="jobs-div">
+	<div class="row">
+		<div class="first-column-jobs col-sm-3 col-xs-11 col-xs-preset-1">
+			<div>
+				<h3>Филтри</h3>
+				<div id="filters">
+					<h4>Вид</h4>
+					<input type="checkbox" name="type"> Работа<br>
+  					<input type="checkbox" name="type" checked> Стаж<br>
+				</div>
+			</div>
+		</div>
+		
+		<div class="second-column-jobs col-sm-8 col-sm-offset-1 col-xs-11 col-xs-preset-1">
+			<h1>Обяви за работа и стаж</h1>
+			<span ng-repeat="job in job_listings">
+				<div class="single-jobs-div">
+					<div class="col-lg-3 col-xs-3">
+						<img ng-src="{{job.img}}" class="img-responsive" id="course-image" style="display: block; margin: auto;">
+					</div>
+					<div class="col-lg-9 col-xs-9">
+						<h4><b> {{ job.name }} </b></h4>
+						<p>Вид: <b>{{ job.type }}</b></p>
+						<p>Компания: <b>{{ job.company }}</b></p>
+						<p>Описание: {{ job.description }} </p>
+					</div>
+				</div>
+				<hr>
+			</span>
+		</div>
+	</div>
+</div>

@@ -118,7 +118,7 @@ input[type=submit], input[type=button] {
 	padding-bottom: 2%;
 }
 
-#row {
+.row {
 	vertical-align: top;
 	padding: 0;
 }
@@ -149,9 +149,9 @@ input[type=submit], input[type=button] {
 	padding: 1rem;
 }
 
-/* --------------- Courses --------------- */
+/* --------------- Courses and Jobs --------------- */
 
-.courses-div {
+.courses-div, .jobs-div {
 	width: 90%;
 	margin-left: 5%;
 	display: flex;
@@ -159,13 +159,15 @@ input[type=submit], input[type=button] {
 	flex-wrap: wrap;
 }
 
-.courses-div > #row > div {
+.courses-div > .row > div , 
+.jobs-div > .row > div {
 	background-color: rgba(255,255,255,0.95);
 	border-radius: 2rem;
 }
 
 #filters {
 	font-size: 1.5rem;
+	padding-bottom: 1rem;
 }
 
 .single-course-div:hover {
@@ -174,4 +176,8 @@ input[type=submit], input[type=button] {
 
 #filters > h4 {
 	padding-top: 1rem;
-} 
+}
+
+.course-image:hover {
+	opacity: 0.5;
+}

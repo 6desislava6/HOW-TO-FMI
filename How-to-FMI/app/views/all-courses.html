@@ -1,7 +1,7 @@
 <div navigationpath></div>
 <div class="courses-div">
-	<div id="row">
-		<div class="first-column-courses col-md-3 col-sm-3 col-xs-11 col-xs-preset-1">
+	<div class="row">
+		<div class="first-column-courses col-sm-3 col-xs-11 col-xs-preset-1">
 			<div>
 				<h3>Филтри</h3>
 				<div id="filters">
@@ -26,22 +26,22 @@
 			</div>
 		</div>
 		
-		<div class="second-column-courses col-md-8 col-sm-8 col-md-offset-1 col-sm-offset-1 col-xs-11 col-xs-preset-1">
+		<div class="second-column-courses col-sm-8 col-sm-offset-1 col-xs-11 col-xs-preset-1">
 			<h1>Курсове</h1>
 			<span ng-repeat="course in courses">
-				<div id="row" class="single-course-div">
-				<div class="col-md-3 col-sm-3 col-xs-3">
-					<img ng-src="{{course.img}}" class="img-responsive" style="display: block; margin: auto;">
+				<div class="single-course-div">
+					<div class="col-lg-3 col-xs-3">
+						<img ng-src="{{course.img}}" class="img-responsive" id="course-image" style="display: block; margin: auto;">
+					</div>
+					<div class="col-lg-9 col-xs-9">
+						<h4><b> {{ course.name }} </b></h4>
+						<p>Специалности: <b>{{ course.compatible_degrees }}</b></p>
+						<p>Категория: <b>{{ course.category }}</b></p>
+						<p>Курс: <b>{{ course.year }}</b></p>
+						<p>Кредити: <b>{{ course.credits }}</b></p>
+						<p>Преподавателски екип: <b>{{ course.teachers }}</b></p>
+					</div>
 				</div>
-				<div class="col-md-9 col-sm-9">
-					<h4><b> {{ course.name }} </b></h4>
-					<p>Специалности: <b>{{ course.compatible_degrees }}</b></p>
-					<p>Категория: <b>{{ course.category }}</b></p>
-					<p>Курс: <b>{{ course.year }}</b></p>
-					<p>Кредити: <b>{{ course.credits }}</b></p>
-					<p>Преподавателски екип: <b>{{ course.teachers }}</b></p>
-				</div>
-			</div>
 			<hr>
 			</span>
 		</div>
