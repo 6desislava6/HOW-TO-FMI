@@ -67,3 +67,17 @@ hr {
 }
 .btn-circle span { padding-right: 6px; }
 .embed-responsive { margin-bottom: 20px; }
+
+.footer-ref{
+	color: white;
+}
+
+#footer-right{
+	margin-right: 8px;
+}
+
+#footer-image{
+	width:60px; 
+	height:45px; 
+	padding-left:15px;
+}
