@@ -31,7 +31,7 @@
     border-collapse: collapse;
 }
 
-#schedule-degree table, th, td {
+#schedule-degree table, #schedule-degree th, #schedule-degree td {
     border: 1px solid #c9c9c9;
 }
 @media screen and (max-width: 810px) {
