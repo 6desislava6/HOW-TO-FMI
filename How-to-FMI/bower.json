@@ -21,7 +21,8 @@
     "underscore": "^1.8.3",
     "angular-bootstrap": "^2.5.0",
     "fullcalendar": "^3.4.0",
-    "angular-ui-calendar": "^1.0.2"
+    "angular-ui-calendar": "^1.0.2",
+    "daypilot": "*"
   },
   "resolutions": {
     "angular": "^1.6.3"

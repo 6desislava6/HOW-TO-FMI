@@ -1,0 +1,132 @@
+<div navigationpath></div>
+<div id="filterSchedule" class="mainView">
+	<h1>Изберете специалност и курс</h1>
+	<form action="">
+	  <label for="">Научна степен:</label>
+	  <input list="degrees" name="browser">
+	  <datalist id="degrees">
+	    <option value="Бакалавър">
+	    <option value="Магистър">
+	  </datalist>
+	  <label for="">Специалност:</label>
+
+	  <input list="spec" name="browser">
+	  <datalist id="spec">
+	    <option value="СИ">
+	    <option value="КН">
+	    <option value="И">
+	    <option value="ИС">
+	    <option value="ПМ">
+	  </datalist>
+	  <label for="">Курс:</label>
+      <input type="number" name="quantity" min="1" max="4">
+  	  <input type="submit" value="Филтрирай">
+	</form>
+</div>
+<div id="schedule-degree">
+	<!-- <div ui-calendar ng-model="eventSources"></div> -->
+
+	<table>
+		<tr>
+			<th>час</th>
+			<th>ПОН</th>
+			<th>ВТО</th>
+			<th>СРЯ</th>
+			<th>ЧЕТВ</th>
+			<th>ПЕТ</th>
+			<th>СЪБ</th>
+			<th>НЕД</th>
+		</tr>
+		<tr>
+			<td>8ч - 9ч</td>
+			<td data-ng-click="openInfo($event)" class="schedule-event cmn-t-scale pchmi" rowspan="2">ПЧМИ</td>
+			<td></td>
+			<td data-ng-click="openInfo($event)" class="schedule-event cmn-t-scale pchmi" rowspan="3">ПЧМИ</td>
+			<td></td>
+			<td data-ng-click="openInfo($event)" class="schedule-event cmn-t-scale daa" rowspan="2">ДАА</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>9ч - 10ч</td>
+			<td></td>
+			<td></td>
+			<td data-ng-click="openInfo($event)" class="schedule-event cmn-t-scale fp" rowspan="4">ФП</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>10ч - 11ч</td>
+			<td data-ng-click="openInfo($event)" class="schedule-event cmn-t-scale ds" rowspan="2">ДС</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>11ч - 12ч</td>
+			<td data-ng-click="openInfo($event)" class="schedule-event cmn-t-scale daa" rowspan="2">ДАА</td>
+			<td ></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>12ч - 13ч</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>13ч - 14ч</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td rowspan="3" data-ng-click="openInfo($event)" class="schedule-event cmn-t-scale pchmi">ПЧМИ</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>14ч - 15ч</td>
+			<td></td>
+			<td data-ng-click="openInfo($event)" class="schedule-event cmn-t-scale ds" rowspan="2">ДС</td>
+			<td></td>
+			<td></td>
+			<td rowspan="3" data-ng-click="openInfo($event)" class="schedule-event cmn-t-scale lambda">Ламбда</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>15ч - 16ч</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>16ч - 17ч</td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+</div>
+<div ng-show="clickedEvent" id="event-description">Description</div>

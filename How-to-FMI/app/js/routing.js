@@ -40,6 +40,8 @@
         }).when('/forum/empty', {
             templateUrl: 'views/404.html',
             controller: 'ForumController'
+        }).when('/missing', {
+            templateUrl: 'views/404.html',
         }).when('/grades', {
             templateUrl: 'views/gradesMain.html',
             controller: 'ForumController'
@@ -55,6 +57,9 @@
         }).when('/forum/comments', {
             templateUrl: 'views/comments.html',
             controller: 'MainCtrl'
+        }).when('/education/schedule/bachelors/:degree', {
+            templateUrl: 'views/schedule-degree.html',
+            controller: 'ScheduleDegree'
         })
         // Kremi
         .when('/register', {
@@ -72,7 +77,7 @@
         }).when('/all-courses', {
             templateUrl: 'views/all-courses.html',
             controller: 'AllCoursesController'
-        }).otherwise('/');
+        }).otherwise('/missing');
     }]);
 })();
 
