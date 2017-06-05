@@ -1,7 +1,7 @@
 Structure
 =========
 * `Gruntfile.js` contains the build configuration
-* `src/` contains the sources
+* `app/` contains the sources
 
 Preparation
 ===========
@@ -30,7 +30,7 @@ Running application
 
 livereload
 -----
-This task watches if there are any changes in the files in the following directories: `'src/**/*.js', 'src/css/**/*.css', 'src/views/**/*.html', 'src/index.html`. If there is a change, the whole application reloads.
+This task watches if there are any changes in the files in the following directories: `'app/**/*.js', 'app/css/**/*.css', 'app/views/**/*.html', 'app/index.html`. If there is a change, the whole application reloads.
 
 
 We also use eslint!

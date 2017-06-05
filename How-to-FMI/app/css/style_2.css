@@ -150,7 +150,9 @@ input[type=submit], input[type=button] {
 }
 
 /* --------------- Courses and Jobs --------------- */
-
+input[type="checkbox"] {
+	margin-right: 1rem;
+}
 .courses-div, .jobs-div {
 	width: 90%;
 	margin-left: 5%;
@@ -166,7 +168,7 @@ input[type=submit], input[type=button] {
 }
 
 #filters {
-	font-size: 1.5rem;
+	font-size: 2rem;
 	padding-bottom: 1rem;
 }
 

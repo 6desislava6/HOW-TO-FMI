@@ -28,10 +28,10 @@
 		
 		<div class="second-column-courses col-sm-8 col-sm-offset-1 col-xs-11 col-xs-preset-1">
 			<h1>Курсове</h1>
-			<span ng-repeat="course in courses">
+			<span class="row" ng-repeat="course in courses">
 				<div class="single-course-div">
 					<div class="col-lg-3 col-xs-3">
-						<img ng-src="{{course.img}}" class="img-responsive" id="course-image" style="display: block; margin: auto;">
+						<img ng-src="{{course.img}}" class="img-responsive course-image" style="display: block; margin: auto;">
 					</div>
 					<div class="col-lg-9 col-xs-9">
 						<h4><b> {{ course.name }} </b></h4>
@@ -42,7 +42,7 @@
 						<p>Преподавателски екип: <b>{{ course.teachers }}</b></p>
 					</div>
 				</div>
-			<hr>
+				<hr>
 			</span>
 		</div>
 	</div>
