@@ -1,18 +1,12 @@
-<div class="st-info-div">
+<div navigationpath></div>
+<div ng-controller="StudentsInfoController" class="st-info-div">
 	<h1>За кандидат-студенти</h1>
 	<div id="row">
 		<div class="square-section col-md-5 col-sm-5 col-xs-11 col-xs-preset-1">
-			<h3>Бакалавърски програми {{ 2+2 }}</h3>
+			<h3>Бакалавърски програми</h3>
 			<div>
-				<ul>
-					<li>Информатика</li>
-					<li>Информационни системи</li>
-					<li>Компютърни науки</li>
-					<li>Математика</li>
-					<li>Математика и информатика</li>
-					<li>Приложна математика</li>
-					<li>Софтурено инженерство</li>
-					<li>Статистика</li>
+				<ul ng-repeat="degree in bachelor_degrees">
+					<li>{{ degree }}</li>
 				</ul>
 			</div>
 		</div>
@@ -29,6 +23,16 @@
 			<h3>Полезна литература</h3>
 			<div>
 				Donec a augue rutrum magna luctus pellentesque eu dignissim risus. Mauris sagittis viverra odio, varius malesuada neque finibus sit amet. Quisque consectetur, ex vitae consectetur tristique, mi justo scelerisque ante, vel porttitor erat mauris aliquet magna. Praesent interdum placerat orci, et convallis ipsum posuere quis. Cras eget turpis massa.
+			</div>
+		</div>
+		<div class="square-section col-md-5 col-sm-5 col-md-offset-1 col-sm-offset-1 col-xs-11 col-xs-preset-1">
+			<h3>Предстоящи кандидат-студентски изпити:</h3>
+			<div>
+				<ul ng-repeat="exam in exams">
+					<li> 
+						Предмет: <b><i>{{ exam.name }}</i></b> Дата: <b><i>{{ exam.date }}</i></b> Час: <b><i>{{ exam.time }}</i></b>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>

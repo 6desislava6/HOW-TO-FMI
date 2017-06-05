@@ -1,4 +1,5 @@
-<div ng-controller="AllCoursesController" class="courses-div">
+<div navigationpath></div>
+<div class="courses-div">
 	<div id="row">
 		<div class="first-column-courses col-md-3 col-sm-3 col-xs-11 col-xs-preset-1">
 			<div>
@@ -6,28 +7,17 @@
 				<div id="filters">
 					<h4>Вид</h4>
 					<input type="checkbox" name="type"> Задължителни дисциплини<br>
-  					<input type="checkbox" name="type" checked> Избираеми дисциплини<br><br>
+  					<input type="checkbox" name="type" checked> Избираеми дисциплини<br>
 
   					<h4>Специалност</h4>
-					<input type="checkbox" name="degree">Информатика<br>
-  					<input type="checkbox" name="degree">Информационни системи<br>
-  					<input type="checkbox" name="degree"> Компютърни науки<br>
-  					<input type="checkbox" name="degree">Математика<br>
-  					<input type="checkbox" name="degree">Математика и информатика<br>
-  					<input type="checkbox" name="degree">Приложна математика<br>
-  					<input type="checkbox" name="degree" checked>Софтуерно инженерство<br>
-  					<input type="checkbox" name="degree">Статистика<br><br>
+  					<span ng-repeat="degree in bachelor_degrees" >
+  						<input type="checkbox" name="category" >{{ degree }}<br>
+  					</span>
 
   					<h4>Категория</h4>
-					<input type="checkbox" name="category">Дидактика<br>
-  					<input type="checkbox" name="category">Информатика и ИТ<br>
-  					<input type="checkbox" name="category">Математика<br>
-  					<input type="checkbox" name="category">ОКН<br>
-  					<input type="checkbox" name="category">Практикум<br>
-  					<input type="checkbox" name="category">Приложна математика<br>
-  					<input type="checkbox" name="category">Статистика<br>
-  					<input type="checkbox" name="category">ЯКН<br>
-  					<input type="checkbox" name="category">Друга<br><br>
+  					<span ng-repeat="category in categories">
+  						<input type="checkbox" name="category" >{{ category }}<br>
+  					</span>
 
   					<h4>Семестър</h4>
   					<input type="checkbox" name="semester">Зимен<br>
@@ -38,49 +28,22 @@
 		
 		<div class="second-column-courses col-md-8 col-sm-8 col-md-offset-1 col-sm-offset-1 col-xs-11 col-xs-preset-1">
 			<h1>Курсове</h1>
-			<div id="row">
+			<span ng-repeat="course in courses">
+				<div id="row" class="single-course-div">
 				<div class="col-md-3 col-sm-3 col-xs-3">
-					<img src="resources/images/elixir.png" class="img-responsive" height="250" style="display: block; margin: auto;">
+					<img ng-src="{{course.img}}" class="img-responsive" height="250" style="display: block; margin: auto;">
 				</div>
 				<div class="col-md-9 col-sm-9">
-					<h4><b>Функционално програмиране с Elixir</b></h4>
-					<p>Специалности: <b>И, ИС, КН, МИ, СИ</b></p>
-					<p>Категория: <b>ЯКН, КП</b></p>
-					<p>Курс: <b>2</b></p>
-					<p>Кредити: <b>3.5</b></p>
-					<p>Преподавателски екип: <b>Николай Цветинов, Валентин Михов</b></p>
+					<h4><b> {{ course.name }} </b></h4>
+					<p>Специалности: <b>{{ course.compatible_degrees }}</b></p>
+					<p>Категория: <b>{{ course.category }}</b></p>
+					<p>Курс: <b>{{ course.year }}</b></p>
+					<p>Кредити: <b>{{ course.credits }}</b></p>
+					<p>Преподавателски екип: <b>{{ course.teachers }}</b></p>
 				</div>
 			</div>
 			<hr>
-
-			<div id="row" class="single-course-div">
-				<div class="col-md-3 col-sm-3 col-xs-3">
-					<img src="resources/images/iot.png" class="img-responsive" height="250" style="display: block; margin: auto;">
-				</div>
-				<div class="col-md-9 col-sm-9">
-					<h4><b>Интернет на нещата</b></h4>
-					<p>Специалности: <b>И, ИС, КН, МИ, СИ</b></p>
-					<p>Категория: <b>ЯКН</b></p>
-					<p>Курс: <b>3</b></p>
-					<p>Кредити: <b>5</b></p>
-					<p>Преподавателски екип: <b>д-р Стоян Велев, доц. А.Семерджиев, доц. А.Димов</b></p>
-				</div>
-			</div>
-			<hr>
-
-			<div id="row" class="single-course-div">
-				<div class="col-md-3 col-sm-3 col-xs-3">
-					<img src="resources/images/cloud-computing.png" class="img-responsive" height="250" style="display: block; margin: auto;">
-				</div>
-				<div class="col-md-9 col-sm-9 col-xs-9">
-					<h4><b>Cloud Startup</b></h4>
-					<p>Специалности: <b>И, ИС, КН, МИ, СИ</b></p>
-					<p>Категория: <b>ЯКН</b></p>
-					<p>Курс: <b>3</b></p>
-					<p>Кредити: <b>5</b></p>
-					<p>Преподавателски екип: <b>доц. А.Семерджиев</b></p>
-				</div>
-			</div>
+			</span>
 		</div>
 	</div>
 </div>
