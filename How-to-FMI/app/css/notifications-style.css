@@ -1,0 +1,29 @@
+#events-notifications {
+	width: 90%;
+	margin: 0 auto;
+}
+
+#events-notifications h1 {
+	padding-top: 2em;
+
+}
+
+.loader {
+    border: 16px solid #777777; /* Light grey */
+    border-top: 16px solid rgba(3, 34, 61, 0.8);; /* Blue */
+    border-radius: 50%;
+    width: 6em;
+    height: 6em;
+    animation: spin 2s linear infinite;
+	margin: 0 auto;
+	margin-top: 3em; 
+
+}
+.loader: hover {
+	opacity: 0.9;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
