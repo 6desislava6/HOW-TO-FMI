@@ -36,7 +36,7 @@
     <!--Controllers-->
     <!--<script src="js/controllers/main-controller.js"></script> -->
     
-    <script src="js/controllers/how-to-fmi-controller.js"></script>p
+    <script src="js/controllers/how-to-fmi-controller.js"></script>
     <script src="js/controllers/main-controller.js"></script>
     <script src="js/controllers/calendar-controller.js"></script>
     <script src="js/controllers/small-calendar-controller.js"></script>
@@ -95,7 +95,8 @@
           <div class="dropdown">
             <span onclick="dropdown()" class="glyphicon glyphicon-chevron-down dropbtn" aria-hidden="true"></span>
             <div id="nav-dropdown" class="dropdown-content">
-              <a href="#!/grades">Оценки</a>
+              <a href="#!/grades">Оценки </a>
+	      <a href="#!/grades/electives">Оценки избираеми</a>
               <a href="#">Настройки</a>
               <a href="#!/login">Изход</a>
             </div>
@@ -108,7 +109,20 @@
     <article ng-view id="contentView"></article>
 
     <footer>
-      
+	  <div class="col-md-11">
+				<ul class="list-unstyled">
+					<li><a href="#!/contacts" class="footer-ref">Контакти</a></li>
+					<li><a href="#!/faq" class="footer-ref">FAQ</a></li>
+					<li><a href="#!/materials" class="footer-ref">Полезни връзки</a></li>
+				</ul>
+	  </div>
+	  <div class="col-md-1 footer-ref">
+		<p>Адрес</p></div>
+		<a href="#!/contacts"><img src="resources/images/gmaps.jpg" id="footer-image">
+	<div class="col-md-2 footer-ref">
+		<hr>
+				By Toni, Kremi, Desi ©
+	<div>
     </footer>
   </body>
 
