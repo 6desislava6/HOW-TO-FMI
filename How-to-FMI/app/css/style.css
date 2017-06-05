@@ -12,9 +12,10 @@ header, footer {
 }
 
 footer {
-    height: 200px;
+    height: 12em;
     width: 100%;
-    margin-top: 60px;
+    margin-top: 7em;
+
 }
 
 nav {
@@ -152,6 +153,7 @@ header > a img {
 nav > div > a:hover {
     opacity: 0.6;
 }
+
 #notifications-bell {
     font-size: 30px;
     text-decoration: none;

@@ -25,9 +25,9 @@
         }).when('/education/disciplines', {
             templateUrl: 'views/students-candidates.html',
             controller: 'StudentsCandidatesController'
-        }).when('/education/disciplines/pchmi', {
-            templateUrl: 'views/students-candidates.html',
-            controller: 'StudentsCandidatesController'
+        }).when('/education/disciplines/:courseName', {
+            templateUrl: 'views/course.html',
+            controller: 'CourseController'
         }).when('/education/disciplines/reviews', {
             templateUrl: 'views/students-candidates.html',
             controller: 'StudentsCandidatesController'
@@ -50,7 +50,11 @@
             templateUrl: 'views/contacts.html',
             controller: 'MainCtrl'
         }).when('/login', {
-            templateUrl: 'views/login.html'
+            templateUrl: 'views/login.html',
+            controller: 'LoginController' 
+        }).when('/forum/comments', {
+            templateUrl: 'views/comments.html',
+            controller: 'MainCtrl'
         })
         // Kremi
         .when('/register', {

@@ -8,26 +8,24 @@
     <img id="big-logo" src="resources/images/logo.png" alt="">
     <aside class="login-column">
         <div class="mainView">
-            <form id="login-form" class="login-column" action="#!/">
-                <input type="text" name="" id="">
-                <input type="password" name="" id="">
-                <input type="submit" name="" id="" value="Вход">
+            <p id="login-errors"></p>
+            <form id="login-form" class="login-column" ng-submit="login()">
+                <input type="text" ng-model="username" name="" id="">
+                <input type="password" ng-model="password" name="" id="">
+                <button ng-click="count = count + 1" ng-init="count=0">Вход</button>
                 <a href="">Възстановяване на парола</a>
             </form>
             <div>
                 <p>Влезте с ваш акаунт във:</p>
-                <div>
-                    <span>
-                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-                        </fb:login-button>
-                    </span>
-                    <span><div class="g-signin2" data-onsuccess="onSignIn"></div></span>
+                <div id="other-logins">
+                    <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
+                    <span class="g-signin2" data-onsuccess="onSignIn" />
                 </div>
             </div>
         </div>
         <div class="mainView">
         <p>Създаване на акаунт</p>
-        <a href="#!/registration"><button>Регистрация</button></a>
+        <a href="#!/register"><button>Регистрация</button></a>
         </div>
     </aside>
 </div>
@@ -59,7 +57,7 @@
       console.log('Image URL: ' + profile.getImageUrl());
       console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
-    
+
     function checkLoginState() {
       FB.getLoginStatus(function(response) {
         statusChangeCallback(response);

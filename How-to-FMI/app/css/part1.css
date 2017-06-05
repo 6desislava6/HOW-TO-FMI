@@ -12,6 +12,10 @@
 	background-color:#CFCFCF;
 }
 
+.well.well-lg.thread{
+	background-color:#D3D3D3;
+}
+
 hr {
   border-color: #A9A9A9;
   height: 2px;
@@ -36,3 +40,30 @@ hr {
 	font-weight: 800;
 	padding: 3px 10px 2px;
 }
+
+.media .media-object { max-width: 120px; }
+.media-body { position: relative; }
+.media-date { 
+    position: absolute; 
+    right: 25px;
+    top: 25px;
+}
+.media-date li { padding: 0; }
+.media-date li:first-child:before { content: ''; }
+.media-date li:before { 
+    content: '.'; 
+    margin-left: -2px; 
+    margin-right: 2px;
+}
+.media-comment { margin-bottom: 20px; }
+.media-replied { margin: 0 0 20px 50px; }
+.media-replied .media-heading { padding-left: 6px; }
+
+.btn-circle {
+    font-weight: bold;
+    font-size: 12px;
+    padding: 6px 15px;
+    border-radius: 20px;
+}
+.btn-circle span { padding-right: 6px; }
+.embed-responsive { margin-bottom: 20px; }

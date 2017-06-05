@@ -1,0 +1,86 @@
+#education-filter {
+	display: flex;
+	flex-direction: row;
+	font-size: 1.4em;
+	width: 90%;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+#education-filter div {
+	width: 33.33333%;
+}
+
+#education-filter ul {
+	padding: 2em;
+}
+
+#filter-degrees > div, #filter-courses > div, #filter-materials > div {
+	padding-left: 1em;	
+	padding-right: 1em;	
+}
+
+#education-filter ul li:hover, #education-filter h3:hover {
+	opacity: 0.6;
+}
+#education-filter h3 {
+	margin: 0;
+    background-color: rgba(3, 34, 61, 0.8);
+	color: white;
+	padding: 1em;
+	width: 100%;	
+}
+
+#filter-degrees div {
+ 	display: inline-block;
+}
+
+#education-main {
+	width: 90%;
+	margin: 0 auto;
+	margin-top: 3em;
+	padding: 3em;
+}
+#education-main article {
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1px;
+	padding: 2em;
+}
+
+#education-main article {
+	width: 70%;
+}
+#education-main aside {
+	float: right;
+	width: 30%;
+	text-align: center;
+	background-color: transparent;
+}
+
+@media screen and (max-width: 810px) {
+	#education-filter {
+		flex-direction: column;
+		width: 100%;
+	}
+	#education-filter > div {
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	#education-main article {
+		width: 100%;
+	}
+
+	#education-main {
+		padding: 0px;
+	}
+
+	#education-main aside {
+		float: none;
+		width: 100%;
+		text-align: center;
+		background-color: transparent;
+	}
+
+
+}
