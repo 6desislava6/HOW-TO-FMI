@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>How to FMI</title>
-
+    
     <!--libraries and packages -->
     <!-- Bootstrap's JS изисква jquery -->
     <script src="lib/jquery/dist/jquery.js"></script>
@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/course-style.css">
     <link rel="stylesheet" href="css/notifications-style.css">
     <link rel="stylesheet" href="css/schedule-degree-style.css">
+    <link rel="stylesheet" href="css/profile-style.css">
 
     <!-- Modules and routing-->
     <script src="js/module.js"></script>
@@ -36,14 +37,13 @@
     <!--Controllers-->
     <!--<script src="js/controllers/main-controller.js"></script> -->
     
-    <script src="js/controllers/how-to-fmi-controller.js"></script>p
+    <script src="js/controllers/how-to-fmi-controller.js"></script>
     <script src="js/controllers/main-controller.js"></script>
     <script src="js/controllers/calendar-controller.js"></script>
     <script src="js/controllers/small-calendar-controller.js"></script>
     <script src="js/controllers/education-controller.js"></script>
     <script src="js/controllers/forum-controller.js"></script>
     <script src="js/controllers/jobs-controller.js"></script>
-    <script src="js/controllers/students-candidates-controller.js"></script>
     <script src="js/controllers/notifications-controller.js"></script>
     <script src="js/controllers/login-controller.js"></script>
     <script src="js/controllers/course-controller.js"></script>
@@ -53,10 +53,8 @@
     <script src="js/controllers/materials-controller.js"></script>
     <script src="js/controllers/all-courses-controller.js"></script>
     <script src="js/controllers/schedule-degree-controller.js"></script>
-    <!-- Kremi -->
-    <script src="js/controllers/jobs-controller.js"></script>
+    <script src="js/controllers/profile-controller.js"></script>
     
-
     <!--Directives-->
     <script src="js/directives/feed.js"></script>
     <script src="js/directives/small-calendar.js"></script>
@@ -86,7 +84,7 @@
           <li><a class="hover-underline" href="#!/calendar">Календар</a></li>
           <li><a class="hover-underline" href="#!/forum">Форум</a></li>
           <li><a class="hover-underline" href="#!/jobs">Работа</a></li>
-          <li><a class="hover-underline" href="#!/students-candidates">Кандидат-студенти</a></li>
+          <li><a class="hover-underline" href="#!/students-info">Кандидат-студенти</a></li>
         </ul>
         <div>
           <form class="form-inline my-2">
@@ -98,12 +96,13 @@
           <div class="dropdown">
             <span onclick="dropdown()" class="glyphicon glyphicon-chevron-down dropbtn" aria-hidden="true"></span>
             <div id="nav-dropdown" class="dropdown-content">
-              <a href="#!/grades">Оценки</a>
+              <a href="#!/grades">Оценки </a>
+	      <a href="#!/grades/electives">Оценки избираеми</a>
               <a href="#">Настройки</a>
               <a href="#!/login">Изход</a>
             </div>
           </div>
-          <a href="#!/profile"><img src="resources/images/grumpy.jpg" alt=""></a>
+          <a href="#!/profile/profile"><img src="resources/images/grumpy.jpg" alt=""></a>
         </div>
 
       </nav>
@@ -111,9 +110,23 @@
     <article ng-view id="contentView"></article>
 
     <footer>
-      
+      <div>
+          <div class="col-md-11">
+            <ul class="list-unstyled">
+              <li><a href="#!/contacts" class="footer-ref">Контакти</a></li>
+              <li><a href="#!/faq" class="footer-ref">FAQ</a></li>
+              <li><a href="#!/materials" class="footer-ref">Полезни връзки</a></li>
+            </ul>
+        </div>
+        <div class="col-md-1 footer-ref">
+          <p>Адрес</p>
+          <a href="#!/contacts"><img src="resources/images/gmaps.jpg" id="footer-image"></a>
+        </div>
+        <div class="col-md-2 footer-ref">
+        <hr>
+          By Toni, Kremi, Desi ©
+        <div>
+      </div>
     </footer>
   </body>
-
-
 </html>

@@ -14,8 +14,7 @@ header, footer {
 footer {
     height: 12em;
     width: 100%;
-    margin-top: 7em;
-
+    clear: both;
 }
 
 nav {
@@ -130,6 +129,11 @@ nav ul li:last-child {
     margin: 6em auto;
 }
 
+#contentView:after {
+  content: "";
+  display: block;
+}
+
 nav > div a img {
     height: 60px;
     margin-left: 1em;
@@ -153,7 +157,6 @@ header > a img {
 nav > div > a:hover {
     opacity: 0.6;
 }
-
 #notifications-bell {
     font-size: 30px;
     text-decoration: none;
@@ -295,3 +298,8 @@ nav > div > a:hover {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+footer > div {
+    width: 90%;
+    margin: 0 auto;
+}
