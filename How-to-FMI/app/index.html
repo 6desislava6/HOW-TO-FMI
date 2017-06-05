@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>How to FMI</title>
+
+    <!--libraries and packages -->
+    <!-- Bootstrap's JS изисква jquery -->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/underscore/underscore.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  
+    <!-- Styles -->
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/feed.css">
+    <link rel="stylesheet" href="css/main-style.css">
+    <link rel="stylesheet" href="css/part1.css">
+    <link rel="stylesheet" href="css/time-icon-style.css">
+    <link rel="stylesheet" href="css/login-style.css">
+    <link rel="stylesheet" href="css/style_2.css">
+    <link rel="stylesheet" href="css/education-style.css">
+    <link rel="stylesheet" href="css/navigation-path.css">
+    <link rel="stylesheet" href="css/course-style.css">
+    <link rel="stylesheet" href="css/notifications-style.css">
+    <link rel="stylesheet" href="css/schedule-degree-style.css">
+
+    <!-- Modules and routing-->
+    <script src="js/module.js"></script>
+    <script src="js/routing.js"></script>
+
+    <!--Controllers-->
+    <!--<script src="js/controllers/main-controller.js"></script> -->
+    
+    <script src="js/controllers/how-to-fmi-controller.js"></script>p
+    <script src="js/controllers/main-controller.js"></script>
+    <script src="js/controllers/calendar-controller.js"></script>
+    <script src="js/controllers/small-calendar-controller.js"></script>
+    <script src="js/controllers/education-controller.js"></script>
+    <script src="js/controllers/forum-controller.js"></script>
+    <script src="js/controllers/jobs-controller.js"></script>
+    <script src="js/controllers/students-candidates-controller.js"></script>
+    <script src="js/controllers/notifications-controller.js"></script>
+    <script src="js/controllers/login-controller.js"></script>
+    <script src="js/controllers/course-controller.js"></script>
+    <script src="js/controllers/register-controller.js"></script>
+    <script src="js/controllers/faq-controller.js"></script>
+    <script src="js/controllers/students-info-controller.js"></script>
+    <script src="js/controllers/materials-controller.js"></script>
+    <script src="js/controllers/all-courses-controller.js"></script>
+    <script src="js/controllers/schedule-degree-controller.js"></script>
+    
+
+    <!--Directives-->
+    <script src="js/directives/feed.js"></script>
+    <script src="js/directives/small-calendar.js"></script>
+    <script src="js/directives/navigation-path.js"></script>
+
+    <!-- Calendar -->
+    <link rel="stylesheet" href="lib/fullcalendar/dist/fullcalendar.css"/>
+    <!-- jquery, moment, and angular have to get included before fullcalendar -->
+    <script type="text/javascript" src="lib/moment/min/moment.min.js"></script>
+    <script type="text/javascript" src="lib/angular-ui-calendar/src/calendar.js"></script>
+    <script type="text/javascript" src="lib/fullcalendar/dist/fullcalendar.min.js"></script>
+    <script type="text/javascript" src="lib/fullcalendar/dist/gcal.js"></script>
+    <script>
+      function dropdown() {
+        document.getElementById("nav-dropdown").classList.toggle("show");
+      }
+    </script>
+
+  </head>
+  <body ng-app="htfmi" ng-controller="HowToFMIController"/>
+    <header>
+    <a href="#!/"><img src="resources/images/logo_mini.png" alt=""></a>
+      <nav>
+        <ul>
+          <li><a class="hover-underline" href="#!/">Начало</a></li>
+          <li><a class="hover-underline" href="#!/education">Обучение</a></li>
+          <li><a class="hover-underline" href="#!/calendar">Календар</a></li>
+          <li><a class="hover-underline" href="#!/forum">Форум</a></li>
+          <li><a class="hover-underline" href="#!/jobs">Работа</a></li>
+          <li><a class="hover-underline" href="#!/students-candidates">Кандидат-студенти</a></li>
+        </ul>
+        <div>
+          <form class="form-inline my-2">
+            <input id="search" type="text" placeholder="Search">
+            <button id="search-button" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </form>
+          <a href="#!/notifications" id="notifications-bell"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a>
+          <a href="/" id="messages"><img src="resources/images/envelope.png" alt=""></span></a>
+          <div class="dropdown">
+            <span onclick="dropdown()" class="glyphicon glyphicon-chevron-down dropbtn" aria-hidden="true"></span>
+            <div id="nav-dropdown" class="dropdown-content">
+              <a href="#!/grades">Оценки</a>
+              <a href="#">Настройки</a>
+              <a href="#!/login">Изход</a>
+            </div>
+          </div>
+          <a href="#!/profile"><img src="resources/images/grumpy.jpg" alt=""></a>
+        </div>
+
+      </nav>
+    </header>
+    <article ng-view id="contentView"></article>
+
+    <footer>
+      
+    </footer>
+  </body>
+
+
+</html>
