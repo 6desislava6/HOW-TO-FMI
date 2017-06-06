@@ -1,17 +1,25 @@
 <div navigationpath></div>
 <div ng-controller="MaterialsController" class="materials-div">
 	<h1>Материали</h1>
-	<div id="row">
-		<div class="col-md-5 col-sm-5 col-xs-11 col-xs-preset-1">
+	<div class="row">
+		<div class="col-sm-5 col-xs-11 col-xs-preset-1">
 			<div>
-				<img src="resources/images/upload.png" class="img-responsive" height="500" width="500">
-				 <input type="button" value="Качи" style="align-self: center">
+				<a href="http://localhost:8282/#!/">
+					<img src="resources/images/upload.png" class="img-responsive materials-image" height="500" width="500">
+				</a>
+				<a href="http://localhost:8282/#!/" style="text-decoration: none;">
+					<input type="button" value="Качи" class="materials-button">
+				</a>
 			</div>
 		</div>
 		
-		<div class="col-md-5 col-sm-5 col-md-offset-1 col-sm-offset-1 col-xs-11 col-xs-preset-1">
-			<img src="resources/images/download.png" class="img-responsive" height="500" width="500">
-			<input type="button" value="Свали" style="align-self: center; width: 100%">
+		<div class="col-sm-5 col-sm-offset-1 col-xs-11 col-xs-preset-1">
+			<a href="http://localhost:8282/#!/">
+				<img src="resources/images/download.png" class="img-responsive materials-image" height="500" width="500">
+			</a>
+			<a href="http://localhost:8282/#!/" style="text-decoration: none;">
+				<input type="button" value="Свали" class="materials-button">	
+			</a>
 		</div>
 	</div>
 </div>
