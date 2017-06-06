@@ -153,6 +153,11 @@ input[type=submit], input[type=button] {
 input[type="checkbox"] {
 	margin-right: 1rem;
 }
+
+input[type=button]:hover {
+	opacity: 0.9;
+}
+
 .courses-div, .jobs-div {
 	width: 90%;
 	margin-left: 5%;
@@ -180,6 +185,15 @@ input[type="checkbox"] {
 	padding-top: 1rem;
 }
 
-.course-image:hover {
+.course-image:hover, .job-image:hover {
 	opacity: 0.5;
+}
+
+.materials-image:hover {
+	opacity: 0.8;
+}
+
+.materials-button {
+	margin:auto;
+  	display:block;
 }
