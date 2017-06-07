@@ -53,6 +53,4 @@ angular.module('htfmi')
                 img: 'resources/images/cloud-computing.png'
             }            
         ];
-
-
 }]);

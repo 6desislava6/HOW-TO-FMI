@@ -19,6 +19,14 @@
   						<input type="checkbox" name="category" >{{ category }}<br>
   					</span>
 
+  					<h4>Kурс</h4>
+  					<input type="range" min="1" max="5" id="courseInputID" oninput="courseOutputID.value = courseInputID.value">
+  					<output id="courseOutputID"/>
+  					
+  					<h4>Кредити</h4>
+  					<input type="range" min="0" max="10" step=".5" id="creditsInputID" oninput="creditsOutputID.value = creditsInputID.value">
+  					<output id="creditsOutputID"/>
+
   					<h4>Семестър</h4>
   					<input type="checkbox" name="semester">Зимен<br>
   					<input type="checkbox" name="semester" checked>Летен<br><br>
