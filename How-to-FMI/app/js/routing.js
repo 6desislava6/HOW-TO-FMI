@@ -10,8 +10,7 @@
         }).when('/calendar', {
             templateUrl: 'views/calendar.html'
         }).when('/forum', {
-            templateUrl: 'views/forumMain.html',
-            controller: 'ForumController'
+            templateUrl: 'views/forumMain.html'
         }).when('/profile/:profilemenu', {
             templateUrl: 'views/profile.html',
             controller: 'ProfileController'
@@ -31,36 +30,29 @@
             templateUrl: 'views/notifications.html',
             controller: 'NotificationsController'
         }).when('/forum/thread', {
-            templateUrl: 'views/forum.html',
-            controller: 'ForumController'
+            templateUrl: 'views/forum.html'
         }).when('/forum/empty', {
-            templateUrl: 'views/404.html',
-            controller: 'ForumController'
+            templateUrl: 'views/404.html'
         }).when('/missing', {
-            templateUrl: 'views/404.html',
+            templateUrl: 'views/404.html'
         }).when('/grades', {
-            templateUrl: 'views/gradesMain.html',
-            controller: 'ForumController'
+            templateUrl: 'views/gradesMain.html'
         }).when('/grades/electives', {
-            templateUrl: 'views/gradesElectives.html',
-            controller: 'ForumController'
+            templateUrl: 'views/gradesElectives.html'
         }).when('/contacts', {
             templateUrl: 'views/contacts.html',
             controller: 'MainCtrl'
         }).when('/login', {
             templateUrl: 'views/login.html',
-            controller: 'LoginController' 
+            controller: 'LoginController'
         }).when('/forum/comments', {
             templateUrl: 'views/comments.html',
             controller: 'MainCtrl'
         }).when('/education/schedule/bachelors/:degree', {
             templateUrl: 'views/schedule-degree.html',
             controller: 'ScheduleDegree'
-        })
-        // Kremi
-        .when('/register', {
-            templateUrl: 'views/register.html',
-            controller: 'RegisterController'
+        }).when('/register', {
+            templateUrl: 'views/register.html'
         }).when('/faq', {
             templateUrl: 'views/faq.html',
             controller: 'FAQController'
@@ -68,8 +60,7 @@
             templateUrl: 'views/students-info.html',
             controller: 'StudentsInfoController'
         }).when('/materials', {
-            templateUrl: 'views/materials.html',
-            controller: 'MaterialsController'
+            templateUrl: 'views/materials.html'
         }).when('/education/disciplines', {
             templateUrl: 'views/all-courses.html',
             controller: 'AllCoursesController'
