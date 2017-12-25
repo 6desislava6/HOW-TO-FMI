@@ -10,7 +10,7 @@
   					<input type="checkbox" name="type" ng-checked="params.electives"> Избираеми дисциплини<br>
 
   					<h4>Специалност</h4>
-  					<span ng-repeat="degree in bachelor_degrees" >
+  					<span ng-repeat="degree in bachelorDegrees" >
   						<input type="checkbox" name="category" >{{ degree }}<br>
   					</span>
 
@@ -43,7 +43,7 @@
 					</div>
 					<div class="col-lg-9 col-xs-9">
 						<h4><a href="#!/education/disciplines/{{course.ref}}"><b> {{ course.name }} </b></a></h4>
-						<p>Специалности: <b>{{ course.compatible_degrees }}</b></p>
+						<p>Специалности: <b>{{ course.compatibleDegrees }}</b></p>
 						<p>Категория: <b>{{ course.category }}</b></p>
 						<p>Курс: <b>{{ course.year }}</b></p>
 						<p>Кредити: <b>{{ course.credits }}</b></p>

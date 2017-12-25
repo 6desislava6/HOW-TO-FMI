@@ -42,7 +42,6 @@
         "no-undef": 2,
         "no-unused-vars": 1,
         "no-mixed-spaces-and-tabs": 1,
-        "indent": ["warn", 4],
         "linebreak-style": ["warn", "unix"],
         "quotes": ["warn", "single"],
         "semi": ["warn", "always"],
