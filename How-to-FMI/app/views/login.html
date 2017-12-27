@@ -19,7 +19,7 @@
                 <p>Влезте с ваш акаунт във:</p>
                 <div id="other-logins">
                     <fb:login-button scope="public_profile,email" onlogin="checkLoginState();"></fb:login-button>
-                    <span class="g-signin2" data-onsuccess="onSignIn" />
+                    <!-- <span class="g-signin2" data-onsuccess="onSignIn" /> -->
                 </div>
             </div>
         </div>
@@ -31,36 +31,4 @@
 </div>
 
 <meta name="google-signin-client_id" content="1074774584625-95r97su0nkakq9tqi2f60ne98c9kaaqp.apps.googleusercontent.com">
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1891433154452644',
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v2.8'
-    });
-    FB.AppEvents.logPageView();   
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-
-    function onSignIn(googleUser) {
-      var profile = googleUser.getBasicProfile();
-      console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-      console.log('Name: ' + profile.getName());
-      console.log('Image URL: ' + profile.getImageUrl());
-      console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-    }
-
-    function checkLoginState() {
-      FB.getLoginStatus(function(response) {
-        statusChangeCallback(response);
-      });
-    }
-</script>
