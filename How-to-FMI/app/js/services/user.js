@@ -1,6 +1,6 @@
 angular.module('htfmi')
 .factory('userService', function($q, $window) {
-    var currentUser;
+    var currentUser = null;
 
     return {
         login: function() {

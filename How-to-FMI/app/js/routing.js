@@ -1,8 +1,9 @@
 'use strict';
 angular.module('htfmi').config(['$routeProvider', function Router($routeProvider) {
-    $routeProvider.when('/', {
+    $routeProvider.when('/home', {
         templateUrl: 'views/home.html',
-        controller: 'MainCtrl'
+        controller: 'MainCtrl',
+        requireLogin: true
     }).when('/education', {
         templateUrl: 'views/education.html',
         controller: 'EducationController',
@@ -89,7 +90,7 @@ angular.module('htfmi').config(['$routeProvider', function Router($routeProvider
     $rootScope.$on("$locationChangeStart", function(event, next, current) {
         for(var i in $route.routes) {
             if(next.indexOf(i) != -1) {
-                if($route.routes[i].requireLogin && userService.isLoggedIn()) {
+                if($route.routes[i].requireLogin && !userService.isLoggedIn()) {
                     event.preventDefault();
                     $location.path("/login");
                 } else if (!$route.routes[i].requireLogin && userService.isLoggedIn()) {
