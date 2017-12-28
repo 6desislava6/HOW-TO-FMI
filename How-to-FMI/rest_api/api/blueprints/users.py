@@ -7,7 +7,6 @@ users_bp = Blueprint('users', __name__)
 users_api = Api(users_bp, add_api_spec_resource=False, catch_all_404s=True)
 
 users = {'1': 'baaa', '2': 'haaa'}
-print('ko')
 
 
 class Users(Resource):
