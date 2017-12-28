@@ -16,7 +16,7 @@
       console.log('Image URL: ' + profile.getImageUrl());
       console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
     }
-      window.fbAsyncInit = function() {
+    window.fbAsyncInit = function() {
         FB.init({
           appId      : '1891433154452644',
           cookie     : true,
@@ -24,21 +24,21 @@
           version    : 'v2.8'
         });
         FB.AppEvents.logPageView();
-      };
+    };
 
-      (function(d, s, id){
+    (function(d, s, id){
          var js, fjs = d.getElementsByTagName(s)[0];
          if (d.getElementById(id)) {return;}
          js = d.createElement(s); js.id = id;
          js.src = "//connect.facebook.net/en_US/sdk.js";
          fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+    }(document, 'script', 'facebook-jssdk'));
 
-        function checkLoginState() {
-          FB.getLoginStatus(function(response) {
-            console.log(response);
-          });
-        }
+    function checkLoginState() {
+        FB.getLoginStatus(function(response) {
+        console.log(response);
+        });
+    }
     </script>
     <script src="lib/jquery/dist/jquery.js"></script>
     <script src="lib/angular/angular.js"></script>
