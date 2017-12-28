@@ -6,16 +6,14 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from config import config
 from api import users_api
-
-
-db = SQLAlchemy()
+from config import mongo
 
 
 def create_app(config_name):
-    app = Flask(__name__)
+    app = Flask('howtofmi')
     CORS(app, resources={r"/api/*": {"origins": "*"}})
     app.config.from_object(config[config_name])
-    db.init_app(app)
+    mongo.init_app(app)
 
     app.register_blueprint(users_api.blueprint)
 
