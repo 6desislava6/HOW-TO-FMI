@@ -22,7 +22,8 @@
     "angular-bootstrap": "^2.5.0",
     "fullcalendar": "^3.4.0",
     "angular-ui-calendar": "^1.0.2",
-    "daypilot": "*"
+    "daypilot": "*",
+    "ngstorage": "^0.3.11"
   },
   "resolutions": {
     "angular": "^1.6.3"

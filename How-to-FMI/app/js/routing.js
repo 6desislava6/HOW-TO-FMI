@@ -74,7 +74,7 @@ angular.module('htfmi').config(['$routeProvider', function Router($routeProvider
         controller: 'FAQController'
     }).when('/students-info', {
         templateUrl: 'views/students-info.html',
-        controller: 'StudentsInfoController',
+        controller: 'StudentsInfoController'
     }).when('/materials', {
         templateUrl: 'views/materials.html'
     }).when('/education/disciplines', {
@@ -94,6 +94,7 @@ angular.module('htfmi').config(['$routeProvider', function Router($routeProvider
                     event.preventDefault();
                     $location.path("/login");
                 } else if (!$route.routes[i].requireLogin && userService.isLoggedIn()) {
+                    console.log(userService.isLoggedIn());
                     event.preventDefault();
                     $location.path("/home");
                 }

@@ -1,5 +1,3 @@
-from api.blueprints.users import users_api
-
 FB_URL = 'https://graph.facebook.com/me?me?fields=id,name,email&access_token='
 JWT_SECRET = 'secret'
 JWT_ALGORITHM = 'HS256'

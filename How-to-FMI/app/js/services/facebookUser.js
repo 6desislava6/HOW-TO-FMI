@@ -1,6 +1,8 @@
 angular.module('htfmi')
-.factory('facebookUserService', function($q, $window) {
+.factory('facebookUserService', ['$q', '$window', '$sessionStorage',
+    function($q, $window, $sessionStorage, UserResource) {
     return {
+        /*global FB*/
         getUserInfo: function() {
             var deferred = $q.defer();
             FB.api('/me', function(response) {
@@ -23,6 +25,19 @@ angular.module('htfmi')
                 }
             });
             return deferred.promise;
+        },
+        loginSystem: function() {
+            var response = FB.getAuthResponse().authResponse,
+                token = response.accessToken,
+                id = response.id,
+                email = response.email;
+
+            // Getting the id from the rest api and checking if it's
+            // the same:
+            UserResource.log({email: email, facebookToken: token}).then((user) => {
+                $sessionStorage
+            });
+
         }
     }
-});
+}]);

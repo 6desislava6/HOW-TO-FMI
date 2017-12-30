@@ -1,2 +1,2 @@
 'use strict';
-angular.module('htfmi', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.calendar']);
+angular.module('htfmi', ['ngResource', 'ngRoute', 'ui.bootstrap', 'ui.calendar', 'ngStorage']);
