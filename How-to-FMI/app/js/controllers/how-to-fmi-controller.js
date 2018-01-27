@@ -1,6 +1,7 @@
 'use strict';
 angular.module('htfmi')
-    .controller('HowToFMIController', [function () {
+    .controller('HowToFMIController', ['$scope', 'userService', function ($scope, userService) {
+    $scope.profilePicture = userService.getProfilePicture();
 
     // Close the dropdown menu if the user clicks outside of it
     window.onclick = function (event) {

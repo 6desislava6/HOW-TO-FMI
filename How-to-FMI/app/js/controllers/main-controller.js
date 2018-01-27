@@ -1,5 +1,7 @@
 'use strict';
-angular.module('htfmi').controller('MainCtrl', ['$scope', function ($scope) {
+angular.module('htfmi').controller('MainCtrl', ['$scope', 'userService', function ($scope, userService) {
+    $scope.user = userService.currentUser();
+    $scope.profilePicture = userService.getProfilePicture();
 
     $scope.notifications = [
         { ref: '#!/', image: 'new-comment.png', content: 'Десислава Цветкова, Тонка Желева, Кремена Василева и още 17 други потребители коментираха инструменти за управление на изискванията в курса АСИ.', day: ['преди', '1', 'ден'] },

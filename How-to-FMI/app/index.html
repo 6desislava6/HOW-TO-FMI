@@ -90,6 +90,7 @@
     <script src="js/controllers/profile-controller.js"></script>
 
     <!--Services-->
+    <script src="js/services/resources.js"></script>
     <script src="js/services/facebookUser.js"></script>
     <script src="js/services/user.js"></script>
 
@@ -115,6 +116,7 @@
   </head>
   <body ng-app="htfmi" ng-controller="HowToFMIController"/>
     <header>
+    <a resources!/"><img src="
     <a href="#!/"><img src="resources/images/logo_mini.png" alt=""></a>
       <nav>
         <ul>
@@ -141,7 +143,7 @@
               <a href="#!/login">Изход</a>
             </div>
           </div>
-          <a href="#!/profile/profile"><img src="resources/images/grumpy.jpg" alt=""></a>
+          <a href="#!/profile"><img ng-src="{{profilePicture}}" alt=""></a>
         </div>
 
       </nav>

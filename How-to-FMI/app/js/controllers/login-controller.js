@@ -4,11 +4,10 @@ angular.module('htfmi')
         function displayErrors() {
             document.getElementById('login-errors').innerHTML = 'Wrong username or password.';
         }
-/*
-        $scope.$watch(() => userService.isLoggedIn(), (isLoggedIn) => {
-            if (isLoggedIn) {
-                $location.path("/home");
-            }
-        });*/
-        userService.login();
+
+        if (userService.isLoggedIn()) {
+            $location.path("/home");
+        } else {
+            userService.login(null, null, true);
+        }
 }]);

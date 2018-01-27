@@ -1,6 +1,7 @@
 'use strict';
 angular.module('htfmi')
-    .controller('CourseController', ['$scope', '$route', function ($scope, $route) {
+    .controller('CourseController', ['$scope', '$route', 'userService', function ($scope, $route, userService) {
+        $scope.profilePicture = userService.getProfilePicture();
         var id = $route.current.params.courseName;
 
         var courses = {

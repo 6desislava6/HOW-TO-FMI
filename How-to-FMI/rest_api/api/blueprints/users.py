@@ -11,10 +11,8 @@ from flask import abort
 import urllib.request
 from functools import wraps
 from flask_jwt import JWT, jwt_required
-from werkzeug.security import safe_str_cmp
 from api.login_config import FB_URL, JWT_SECRET, JWT_ALGORITHM, JWT_EXP_DELTA_SECONDS
 import jwt
-
 
 
 # Important - api, blueprint
@@ -39,16 +37,15 @@ class UsersRegistration(Resource):
                                     '_id': str(user['_id'])}, JWT_ALGORITHM)
         return user
 
-    def fb_log(self, data, real_user):
-        fb_response = urllib.request.urlopen(FB_URL + data['facebookToken']).read()
+    def fb_login(self, data, real_user):
+        response_str = urllib.request.urlopen(FB_URL + data['facebookToken']).read()
+        fb_response = loads(response_str.decode('utf8'))
         if 'email' in fb_response and fb_response['email'] == real_user['email']:
             return self.generate_token(real_user)
         else:
             return False
 
     def system_login(self, data, real_user):
-        print(hashlib.sha512((data['password'] + real_user['salt']).encode('utf-8')).hexdigest())
-        print(real_user['password'])
         if hashlib.sha512((data['password'] + real_user['salt']).encode('utf-8')).hexdigest() == real_user['password']:
             return self.generate_token(real_user)
         else:
@@ -56,6 +53,10 @@ class UsersRegistration(Resource):
 
     def log_user(self, data):
         real_user = mongo.db.users.find_one({'email': data['email']})
+
+        if real_user is None and 'facebookToken' in data:
+            return self.register_user(data)
+
         if real_user is None:
             return False
 
@@ -67,14 +68,22 @@ class UsersRegistration(Resource):
     def register_user(self, data):
         if mongo.db.users.find_one({'email': data['email']}) is not None:
             abort(409, "A user with that username already exists.")
+
         salt = uuid.uuid4().hex
-        hashed_password = hashlib.sha512((data['password'] + salt).encode('utf-8')).hexdigest()
+        if 'password' in data:
+            hashed_password = hashlib.sha512((data['password'] + salt).encode('utf-8')).hexdigest()
+        else:
+            hashed_password = None
+
         mongo.db.users.insert({
             'email': data['email'],
             'name': data['name'],
+            'first_name': data.get('first_name'),
+            'last_name': data.get('last_name'),
             'salt': salt,
             'password': hashed_password,
-            'date_registered': datetime.now()
+            'date_registered': datetime.now(),
+            'fb_id': data.get('id')
         })
         return {'message': 'The user is registered'}
 
@@ -82,7 +91,12 @@ class UsersRegistration(Resource):
         data = request.get_json()['data']
         user = self.log_user(data)
         if user:
-            return dumps(user)
+            user['_id'] = dumps(user['_id'])
+            user['date_registered'] = dumps(user['date_registered'])
+            user['token'] = dumps(user['token'])
+            user['password'] = None
+            print(user)
+            return user
         else:
             abort(404, "A user with these credentials doesn't exist.")
 

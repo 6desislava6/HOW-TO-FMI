@@ -1,8 +1,8 @@
 <div ng-controller="MainCtrl" id="home-view">
     <div id="main-events-notifications">
         <div id="notifications-box-home" class="mainView">
-          <h1 class="feed-title">Известия</h1>
-          <div feed class="notifications-feed"  id="notifications-feed-main" news="notifications"></div>    
+          <h1 class="feed-title">Здравейте {{user.first_name || user.email }}! Това са вашите известия:</h1>
+          <div feed class="notifications-feed"  id="notifications-feed-main" news="notifications"></div>
           <a href="#!/notifications">Преглед на всички известия</a>
         </div>
         <aside id="aside-calendar" class="mainView">

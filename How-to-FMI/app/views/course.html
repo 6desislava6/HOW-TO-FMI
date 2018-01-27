@@ -11,7 +11,7 @@
 
 	<div class="mainView">
 		<h1>{{course.name}} <img src="resources/images/elixir.png" alt=""></h1>
-		
+
 		<div ng-show="showContent.annotation">
 			<h2>Анотация</h2>
 			<hr>
@@ -30,11 +30,11 @@
 			<hr>
 			<article>
 				<form action="/action_page.php" method="get">
-					<h2>Седмица 1</h2> 
+					<h2>Седмица 1</h2>
 					<input type="checkbox"> <label for="">Лекция 1 - Въведение</label> <br>
 					<input type="checkbox"> <label for="">Лекция 1 - слайдове </label> <br>
 					<input type="checkbox"> <label for="">Статия - критичен анализ на дисциплината</label> <br>
-					<h2>Седмица 2</h2> 	
+					<h2>Седмица 2</h2>
 					<input type="checkbox"> <label for="">Лекция 1 - Въведение</label> <br>
 					<input type="checkbox"> <label for="">Лекция 1 - слайдове </label> <br>
 					<input type="checkbox"> <label for="">Статия - критичен анализ на дисциплината</label> <br>
@@ -51,12 +51,12 @@
 		<div ng-show="showContent.discussion">
 			<h2>Мнения за курса</h2>
 			<hr>
-			
+
 			<article id="discussion">
 				<div class="opinion-course" ng-repeat="opinion in discussion">
 					<div>
-						<img class="profilepic" src="resources/images/grumpy.jpg" alt="">
-				
+						<img class="profilepic" ng-src="{{profilePicture}}" alt="">
+
 						<span class="rating">
 							<a href=""><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span></a>
 							{{opinion.rating}}
@@ -67,10 +67,9 @@
 						</div>
 					</div>
 					<p><a href="">Добави коментар</a></p>
-				</div>				
+				</div>
 			</article>
 		</div>
 	</div>
 </div>
 
- 

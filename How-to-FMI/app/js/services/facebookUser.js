@@ -1,5 +1,5 @@
 angular.module('htfmi')
-.factory('facebookUserService', ['$q', '$window', '$sessionStorage',
+.factory('facebookUserService', ['$q', '$window', '$sessionStorage', 'UserResource',
     function($q, $window, $sessionStorage, UserResource) {
     return {
         /*global FB*/
@@ -19,7 +19,7 @@ angular.module('htfmi')
             var deferred = $q.defer();
             FB.getLoginStatus(function(response) {
                 if (!response || response.error) {
-                    deferred.reject('Error occured');
+                    deferred.reject(response.error);
                 } else {
                     deferred.resolve(response);
                 }
@@ -27,17 +27,22 @@ angular.module('htfmi')
             return deferred.promise;
         },
         loginSystem: function() {
-            var response = FB.getAuthResponse().authResponse,
-                token = response.accessToken,
-                id = response.id,
-                email = response.email;
+            var deferred = $q.defer();
+            FB.getLoginStatus(function(response) {
+                if (!response || response.error || !response.authResponse) {
+                    deferred.reject(response.error);
+                } else {
+                    var response = response.authResponse,
+                        token = response.accessToken,
+                        id = response.id;
 
-            // Getting the id from the rest api and checking if it's
-            // the same:
-            UserResource.log({email: email, facebookToken: token}).then((user) => {
-                $sessionStorage
+                    FB.api('/me', null, {fields: ['email','name','first_name','last_name', 'id'], access_token : token } ,function(response) {
+                        response.facebookToken = token;
+                        deferred.resolve({data: response});
+                    });
+                }
             });
-
+            return deferred.promise;
         }
     }
 }]);
