@@ -16,6 +16,7 @@ def create_app(config_name):
     mongo.init_app(app)
 
     app.register_blueprint(users_api.blueprint)
+    app.register_blueprint(susi_api.blueprint)
 
     return app
 
