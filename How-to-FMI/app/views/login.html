@@ -34,6 +34,7 @@
     function checkLoginState() {
         FB.getLoginStatus(function(response) {
           sessionStorage.setItem("loggedIn", response.status === 'connected');
+          sessionStorage.setItem('facebookLoggedIn', 'true');
           location.reload();
         });
     }
@@ -44,11 +45,11 @@
     <aside class="login-column">
         <div class="mainView">
             <p id="login-errors"></p>
-            <form id="login-form" class="login-column" ng-submit="login()">
-                <input type="text" ng-model="username" name="">
-                <input type="password" ng-model="password" name="">
-                <button ng-click="count = count + 1" ng-init="count=0">Вход</button>
-                <a href="">Възстановяване на парола</a>
+            <form id="login-form" class="login-column">
+                <input type="text" ng-model="email">
+                <input type="password" ng-model="password">
+                <button ng-click="login()">Вход</button>
+                <div ng-if="error">{{error}}</div>
             </form>
             <div>
                 <p>Влезте с ваш акаунт във:</p>

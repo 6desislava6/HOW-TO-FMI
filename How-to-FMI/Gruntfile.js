@@ -38,7 +38,7 @@ module.exports = function (grunt) {
                 logConcurrentOutput: true
             },
             watch: {
-                tasks: ['watch:livereload', 'watch:lint', 'eslint']
+                tasks: ['watch:livereload'/*, 'watch:lint', 'eslint'*/]
             }
         },
         eslint: {

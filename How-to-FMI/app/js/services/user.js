@@ -4,6 +4,8 @@ angular.module('htfmi')
     return {
         // Stays null if user hasn't logged in correctly
         login: function(email, password, facebookLogin=false) {
+            var error = null;
+            console.log('baba');
             if (facebookLogin) {
                 var data = facebookUserService.loginSystem().then(data => {
                     if (data) {
@@ -15,14 +17,19 @@ angular.module('htfmi')
                             $location.path("/home");
                         });
                     }
-                }, (err) => console.log(err));
+                }, (err) => {
+                    error = err;
+                });
 
             } else {
+                console.log({data: {email: email, password: password}});
                 UserResource.log({data: {email: email, password: password}}, (userData) => {
                     $sessionStorage.currentUser = userData;
-                }, error => console.log(error));
+                }, (err) => {
+                    error = err;
+                });
             }
-            return $sessionStorage.currentUser;
+            return $sessionStorage.currentUser || {error: error};
         },
         logout: function() {
             $sessionStorage.currentUser = null;
@@ -34,10 +41,9 @@ angular.module('htfmi')
             return $sessionStorage.currentUser;
         },
         getProfilePicture: function () {
-            console.log($sessionStorage.currentUser);
-            if ($sessionStorage.currentUser && $sessionStorage.currentUser.profile_image) {
+            if (!!$sessionStorage.currentUser && $sessionStorage.currentUser.profile_image) {
                 return $sessionStorage.currentUser.profile_image;
-            } else if ($sessionStorage.currentUser && 'fb_id' in $sessionStorage.currentUser) {
+            } else if (!!$sessionStorage.currentUser && $sessionStorage.currentUser.fb_id) {
                 return 'https://graph.facebook.com/' + $sessionStorage.currentUser.fb_id + '/picture';
             }
             return 'resources/images/grumpy.jpg';

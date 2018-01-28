@@ -12,6 +12,7 @@ import urllib.request
 from functools import wraps
 from flask_jwt import JWT, jwt_required
 from api.login_config import FB_URL, JWT_SECRET, JWT_ALGORITHM, JWT_EXP_DELTA_SECONDS
+from api import email_service
 import jwt
 
 
@@ -75,25 +76,27 @@ class UsersRegistration(Resource):
         else:
             hashed_password = None
 
-        mongo.db.users.insert({
+        user = {
             'email': data['email'],
-            'name': data['name'],
+            'name': data.get('name'),
             'first_name': data.get('first_name'),
             'last_name': data.get('last_name'),
             'salt': salt,
             'password': hashed_password,
             'date_registered': datetime.now(),
             'fb_id': data.get('id')
-        })
-        return {'message': 'The user is registered'}
+        }
+        mongo.db.users.insert(user)
+        email_service.send_email(data['email'])
+        return user
 
     def post(self):
         data = request.get_json()['data']
         user = self.log_user(data)
         if user:
-            user['_id'] = dumps(user['_id'])
+            user['_id'] = dumps(user.get('_id') or '')
             user['date_registered'] = dumps(user['date_registered'])
-            user['token'] = dumps(user['token'])
+            user['token'] = dumps(user.get('_id') or '')
             user['password'] = None
             print(user)
             return user

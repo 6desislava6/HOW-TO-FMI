@@ -68,7 +68,8 @@ angular.module('htfmi').config(['$routeProvider', function Router($routeProvider
         templateUrl: 'views/schedule-degree.html',
         controller: 'ScheduleDegree'
     }).when('/register', {
-        templateUrl: 'views/register.html'
+        templateUrl: 'views/register.html',
+        controller: 'UserRegistrationController'
     }).when('/faq', {
         templateUrl: 'views/faq.html',
         controller: 'FAQController'
