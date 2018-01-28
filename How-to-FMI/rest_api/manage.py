@@ -5,7 +5,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 from config import config
-from api import users_api
+from api import users_api, susi_api
 from config import mongo
 
 
