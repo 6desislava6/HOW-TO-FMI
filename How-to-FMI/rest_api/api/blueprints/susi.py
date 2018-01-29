@@ -27,7 +27,7 @@ class Susi(Resource):
                 data['ECTS'] = subject[5]
                 year_grades.append(json.dumps(data, ensure_ascii=False))
             all_grades.append(year_grades)
-        return json.dumps(all_grades, ensure_ascii=False)
+        return all_grades
 
     def collect_grades(self, user, passwd):
         driver = webdriver.PhantomJS(service_args=['--ignore-ssl-errors=true', '--ssl-protocol=any'])

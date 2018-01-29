@@ -14,6 +14,6 @@ angular.module('htfmi')
 .factory('SusiResource', ['$resource', function ($resource) {
 	var resourceLink = 'http://0.0.0.0:5000/susi/:susiUser/:susiPassword';
     return $resource(resourceLink, {susiUser:'@susiUser', susiPassword: '@susiPassword'}, {
-    	get: {method: 'GET'},
+    	get: {method: 'GET', isArray:true},
     });
 }]);
