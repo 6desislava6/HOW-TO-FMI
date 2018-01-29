@@ -1,6 +1,6 @@
 <table class="feed">
   <tr ng-repeat="new in news">
-    <td><a href="{{ new.ref }}"><img src="{{'resources/images/' + new.image}}"></a></td>
+    <td><a href="{{ new.ref }}"><img ng-src="{{'resources/images/' + new.image}}"></a></td>
     <td>
       <a href="{{ new.ref }}"><h3>{{new.title}}</h3></a>
       <h4><b>{{new.date}}</b></h4>
