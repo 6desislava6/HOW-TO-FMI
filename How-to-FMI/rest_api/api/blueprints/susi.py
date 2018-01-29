@@ -25,7 +25,7 @@ class Susi(Resource):
                 data['completed'] = subject[3]
                 data['grade'] = subject[4]
                 data['ECTS'] = subject[5]
-                year_grades.append(json.dumps(data, ensure_ascii=False))
+                year_grades.append(data)
             all_grades.append(year_grades)
         return all_grades
 
