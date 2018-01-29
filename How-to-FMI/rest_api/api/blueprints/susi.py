@@ -28,11 +28,11 @@ class Susi(Resource):
                 year_grades.append(json.dumps(data, ensure_ascii=False))
             all_grades.append(year_grades)
         return json.dumps(all_grades, ensure_ascii=False)
-   
+
     def collect_grades(self, user, passwd):
-        driver = webdriver.PhantomJS()
+        driver = webdriver.PhantomJS(service_args=['--ignore-ssl-errors=true', '--ssl-protocol=any'])
         driver.get("https://susi.uni-sofia.bg/ISSU/forms/Login.aspx")
-        username = driver.find_element_by_id("txtUserName")
+        username =  driver.find_element_by_id("txtUserName")
         password = driver.find_element_by_id("txtPassword")
 
         username.send_keys(user)
@@ -49,7 +49,7 @@ class Susi(Resource):
         for i in [2, 8, 14, 20]:
             table = driver.find_element_by_xpath("//form//table[7]//tr[{}]/td//table".format(i))
             rows = []
-        
+
             for row in table.find_elements_by_xpath(".//tr"):
                 rows.append([tr.text for tr in row.find_elements_by_xpath(".//td[@class='messageExtraText'][text()]")])
             grades_years.append(list(filter(lambda row: len(row) == 6 and 'Предмет' not in row, rows)))
@@ -57,5 +57,5 @@ class Susi(Resource):
 
     def get(self, user, password):
         return self.collect_grades(user, password)
-        
+
 susi_api.add_resource(Susi, '/susi/<string:user>/<string:password>')
