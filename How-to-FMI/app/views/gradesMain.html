@@ -6,10 +6,21 @@
             <h1 class="page-header">Оценки
             </h1>
   </div><!-- /.col-lg-6 -->
-  
+
+
+  <!-- Here! -->
+<div class="loader" ng-if="loading"></div>
+<form id="login-form" class="login-column">
+    Susi username:
+    <input type="text" ng-model="susiUsername">
+    Susi password:
+    <input type="password" ng-model="password">
+    <button ng-click="getGrades()">Вход</button>
+</form>
+
   <h4><span class="label label-warning">2016-2017</span></h4>
   <h4><span class="label label-primary">Зимен  семестър</span></h4>
-  
+
   <table class="table table-striped table-bordered">
     <thead>
       <tr>
@@ -47,7 +58,7 @@
   </table>
   <br>
   <h4><span class="label label-primary">Летен  семестър</span></h4>
-  
+
   <table class="table table-striped table-bordered">
     <thead>
 	<thead>
@@ -88,6 +99,6 @@
 
     </div>
 </div>
-	
+
 <!-- /.container -->
 
