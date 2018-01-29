@@ -86,6 +86,18 @@ angular.module('htfmi').config(['$routeProvider', function Router($routeProvider
         templateUrl: 'views/jobs.html',
         requireLogin: true,
         controller: 'JobsController'
+    }).when('/moodle', {
+        templateUrl: 'views/moodle.html',
+        requireLogin: true,
+        controller: 'MoodleController'
+    }).when('/enrolled', {
+        templateUrl: 'views/enrolled-courses.html',
+        requireLogin: true,
+        controller: 'EnrolledCoursesController'
+    }).when('/moodleintegration', {
+        templateUrl: 'views/moodleintegration.html',
+        requireLogin: true,
+        controller: 'MoodleIntegrationController'
     }).otherwise('/missing');
 }]).run(function($rootScope, $route, $location, userService){
     $rootScope.$on("$locationChangeStart", function(event, next, current) {

@@ -107,8 +107,21 @@ class UsersRegistration(Resource):
         data = request.get_json()['data']
         self.register_user(data)
 
+class MoodleIntegration(Resource):
+    def post(self):
+        data = request.get_json()['data']
+        user = mongo.db.users.find_one({'email': data['email']})
+
+        if user is None:
+            return False;
+
+        mongo.db.users.update({ "email": data['email'] }, { "$set": {"moodleToken": data['moodleToken']}}, upsert = False)
+        
+        return data;
+
 
 # Important step:
 users_api.add_resource(Users, '/users/all')
 users_api.add_resource(User, '/users/<string:email>')
 users_api.add_resource(UsersRegistration, '/users/register_service')
+users_api.add_resource(MoodleIntegration, '/users/moodle_integration')

@@ -10,4 +10,10 @@ angular.module('htfmi')
 .factory('Courses', ['$resource', function ($resource) {
 	// using rest API here.
     return null;
+}])
+.factory('MoodleIntegration', ['$resource', function ($resource) {
+	var resourceLink = 'http://0.0.0.0:5000/users/';
+    return $resource(resourceLink, {id: '@_id'}, {
+        integrateMoodle: {method: 'POST', url: resourceLink + 'moodle_integration', isArray: false}
+    });
 }]);
