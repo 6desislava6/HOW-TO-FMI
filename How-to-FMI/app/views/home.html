@@ -1,9 +1,20 @@
 <div ng-controller="MainCtrl" id="home-view">
     <div id="main-events-notifications">
         <div id="notifications-box-home" class="mainView">
-          <h1 class="feed-title">Здравейте {{user.first_name || user.email }}! Това са вашите известия:</h1>
-          <div feed class="notifications-feed"  id="notifications-feed-main" news="notifications"></div>
-          <a href="#!/notifications">Преглед на всички известия</a>
+          <h1>Здравейте {{user.first_name || user.email }}! Това са вашите известия:</h1>
+          <div ng-show="error">
+            За да видите своите известия, интегрирайте профила си с Moodle:
+            <a href="#!/moodleintegration">Интеграция с Moodle</a>
+          </div>
+          
+          <div ng-repeat="discussion in discussions|limitTo:3">
+            <h4>
+              <a href="https://learn.fmi.uni-sofia.bg/mod/forum/discuss.php?d={{ discussion.discussion }}"><b> {{ discussion.name }} </b></a>
+            </h4>
+            <div class="single-course-div">
+              <span ng-bind-html="discussion.message" ></span> 
+            </div>
+          </div>
         </div>
         <aside id="aside-calendar" class="mainView">
           <h2>Предстоящи събития</h2>

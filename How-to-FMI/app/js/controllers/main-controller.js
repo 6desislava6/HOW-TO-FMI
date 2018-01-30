@@ -1,7 +1,48 @@
 'use strict';
-angular.module('htfmi').controller('MainCtrl', ['$scope', 'userService', function ($scope, userService) {
+angular.module('htfmi').controller('MainCtrl', ['$scope', 'userService', '$http', '$sce', '$filter', 
+    function ($scope, userService, $http, $sce, $filter) {
     $scope.user = userService.currentUser();
     $scope.profilePicture = userService.getProfilePicture();
+
+    $scope.discussions = [];
+
+    var currentUser = userService.currentUser();
+    if (currentUser['moodleToken'] === undefined || currentUser['moodleID'] === undefined) {
+        $scope.error = true;
+    } else {
+        $http.get("https://learn.fmi.uni-sofia.bg/webservice/rest/server.php?wstoken=" + userService.currentUser()['moodleToken'] + "&wsfunction=mod_forum_get_forums_by_courses&moodlewsrestformat=json")
+            .then(function(response) {
+                var forumInfos = response.data;
+                var discussions = [];
+                var forumIDs = [];
+                for (var i = 0; i < forumInfos.length; i++) {
+                    if (forumInfos[i]['numdiscussions'] == 0) {
+                        continue;
+                    } else {
+                        forumIDs.push(forumInfos[i]['id']);
+                    }
+                }
+
+                for (var j = 0; j < forumIDs.length; j++) {
+                    $http.get('https://learn.fmi.uni-sofia.bg/webservice/rest/server.php?wstoken=' + userService.currentUser()['moodleToken'] + '&wsfunction=mod_forum_get_forum_discussions_paginated&moodlewsrestformat=json&forumid=' + forumIDs[j])
+                        .then(function(response) {
+                            for (var k = 0; k < response.data['discussions'].length; k++) {
+                                var currentMessage = response.data['discussions'][k]['message'];
+                                currentMessage = $filter('limitTo')(currentMessage, 200, 0);
+                                currentMessage = $sce.trustAsHtml(currentMessage);
+                                response.data['discussions'][k]['message'] = currentMessage;
+                                discussions.push(response.data['discussions'][k]);    
+                            }                          
+                        });
+                }
+
+                function compare(a,b) {
+                  return a.timemodified - b.timemodified;
+                }
+
+                $scope.discussions = discussions.sort(compare);
+            });
+    }
 
     $scope.notifications = [
         { ref: '#!/', image: 'new-comment.png', content: 'Десислава Цветкова, Тонка Желева, Кремена Василева и още 17 други потребители коментираха инструменти за управление на изискванията в курса АСИ.', day: ['преди', '1', 'ден'] },
