@@ -1,34 +1,140 @@
 from flask import Blueprint
-from flask_restful_swagger_2 import Api
+from flask_restful_swagger_2 import Api, Schema, swagger, Resource
 from bson.json_util import dumps, loads
-from flask import Flask, request
-from flask_restful import Resource
+from bson import json_util
+from flask import request
+# from flask_restful import Resource
 from config import mongo
 import hashlib
 import uuid
-from datetime import datetime, timedelta
+from datetime import datetime
 from flask import abort
 import urllib.request
-from functools import wraps
-from flask_jwt import JWT, jwt_required
-from api.login_config import FB_URL, JWT_SECRET, JWT_ALGORITHM, JWT_EXP_DELTA_SECONDS
+# from functools import wraps
+from api.login_config import FB_URL, JWT_SECRET, JWT_ALGORITHM
 from api import email_service
 import jwt
+
+import json
+from bson import ObjectId
 
 
 # Important - api, blueprint
 users_bp = Blueprint('users', __name__)
-users_api = Api(users_bp, add_api_spec_resource=False, catch_all_404s=True)
+users_api = Api(users_bp, catch_all_404s=True, api_spec_url='/swagger/swagger')
+
+
+class UserModel(Schema):
+    type = 'object'
+    properties = {
+        'id': {
+            'type': 'string'
+        },
+        'first_name': {
+            'type': 'string'
+        },
+        'last_name': {
+            'type': 'string'
+        },
+        'fb_id': {
+            'type': 'string'
+        },
+        'email': {
+            'type': 'string'
+        },
+        'date_registered': {
+            'type': 'date'
+        },
+    }
+    required = ['email']
 
 
 class User(Resource):
+    @swagger.doc({
+        'tags': ['user'],
+        'description': 'Returns a user by an email',
+        'parameters': [
+            {
+                'name': 'email',
+                'description': 'The email of the user which serves as an id.',
+                'in': 'path',
+                'type': 'string'
+            }
+        ],
+        'responses': {
+            '200': {
+                'description': 'User',
+                'schema': UserModel,
+                'examples': {
+                    'application/json': {
+                        'id': 1,
+                        'name': 'somebody'
+                    }
+                }
+            }
+        }
+    })
     def get(self, email):
-        return dumps(mongo.db.users.find_one({'email': email}))
+        user = mongo.db.users.find_one({'email': email})
+        return json.dumps(user, indent=4, default=json_util.default)
 
 
 class Users(Resource):
+    @swagger.doc({
+        'tags': ['users'],
+        'description': 'Returns all users',
+        'responses': {
+            '200': {
+                'description': 'Designs',
+                'schema': {
+                    'type': 'array',
+                    'items': UserModel
+                }
+            }
+        }
+    })
     def get(self):
         return dumps(mongo.db.users.find())
+
+
+class UserData(Schema):
+    type = 'object'
+    name = 'data'
+    properties = {
+        'data': {
+            'type': 'object',
+            'properties': {
+                'email': {
+                    'type': 'string',
+                    'required': True
+                },
+                'name': {
+                    'type': 'string',
+                    'required': False
+                },
+                'first_name': {
+                    'type': 'string',
+                    'required': False
+                },
+                'last_name': {
+                    'type': 'string',
+                    'required': False
+                },
+                'password': {
+                    'type': 'string',
+                    'required': False
+                },
+                'fb_id': {
+                    'type': 'string',
+                    'required': False
+                },
+                'facebookToken': {
+                    'type': 'string',
+                    'required': False
+                },
+            }
+        }
+    }
 
 
 class UsersRegistration(Resource):
@@ -90,6 +196,26 @@ class UsersRegistration(Resource):
         email_service.send_email(data['email'])
         return user
 
+    @swagger.doc({
+        'tags': ['users'],
+        'description': 'Logs in a user and returns the user.',
+        'responses': {
+            '200': {
+                'description': 'User login',
+                'schema': {
+                    'type': 'array',
+                    'items': UserModel
+                }
+            }
+        },
+        'parameters': [
+            {
+                'name': 'data',
+                'schema': UserData,
+                'in': 'body',
+            }
+        ]
+    })
     def post(self):
         data = request.get_json()['data']
         user = self.log_user(data)
@@ -103,6 +229,27 @@ class UsersRegistration(Resource):
         else:
             abort(404, "A user with these credentials doesn't exist.")
 
+    @swagger.doc({
+        'tags': ['users'],
+        'description': 'Registers a user and returns the user.',
+        'responses': {
+            '200': {
+                'description': 'User registration.',
+                'schema': {
+                    'type': 'array',
+                    'items': UserModel
+                }
+            }
+        },
+        'parameters': [
+            {
+                'name': 'data',
+                'schema': UserData,
+                'in': 'body',
+                'required': True
+            }
+        ]
+    })
     def put(self):
         data = request.get_json()['data']
         self.register_user(data)

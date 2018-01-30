@@ -106,7 +106,7 @@ angular.module('htfmi').config(['$routeProvider', function Router($routeProvider
                 if($route.routes[i].requireLogin && !userService.isLoggedIn()) {
                     event.preventDefault();
                     $location.path("/login");
-                } else if (!$route.routes[i].requireLogin && userService.isLoggedIn()) {
+                } else if (!$route.routes[i].requireLogin && userService.isLoggedIn() && $location.path() === '/login') {
                     event.preventDefault();
                     $location.path("/home");
                 }
