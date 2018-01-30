@@ -32,25 +32,16 @@
     </tr>
 
       <tr ng-repeat="item in sem">
-        <td>{{ item.subject }}</td>
-        <td>{{ item.teacher }}</td>
-        <td>{{ item.type }}</td>
-        <td>{{ item.grade }}</td>
-        <td>{{ item.ECTS }}</td>
+        <td class="col-sm-6">{{ item.subject }}</td>
+        <td class="col-sm-4">{{ item.teacher }}</td>
+        <td class="col-sm-4">{{ item.type }}</td>
+        <td class="col-sm-4">{{ item.grade }}</td>
+        <td class="col-sm-4">{{ item.ECTS }}</td>
       </tr>>
 
     
   </table>
-</div>>
-
-<!-- <div class="progress">
-  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40"
-  aria-valuemin="0" aria-valuemax="100" style="width:40%">
-    40% Complete (success)
-  </div>
-</div> -->
-
-<!-- <h4><span class="label label-warning">{{ getTotal() }}</span></h4> -->
+</div>
 
 </div>
 
