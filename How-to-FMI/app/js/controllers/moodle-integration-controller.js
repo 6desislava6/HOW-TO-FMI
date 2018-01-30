@@ -31,7 +31,7 @@ angular.module('htfmi')
                                                 console.log(response);
                                                 $sessionStorage.currentUser.moodleToken = data['token'];
                                                 $sessionStorage.currentUser.moodleID = userInfoData['userid'];
-                                                $window.location.href = "#!/enrolled";
+                                                $window.location.href = "#!/home";
                                             }, error => {
                                                 $scope.errorOnRegister = error.data.message;
                                                 console.log($scope.errorOnRegister);

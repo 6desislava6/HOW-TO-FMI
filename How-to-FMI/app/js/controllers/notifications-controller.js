@@ -1,8 +1,12 @@
 'use strict';
 angular.module('htfmi')
-    .controller('NotificationsController', ['$scope', '$sce', '$sessionStorage', 'UserResource', '$http', 'userService',
-        function ($scope, $sce, $sessionStorage, UserResource, $http, userService) {
-        $scope.courses = [];
+    .controller('NotificationsController', ['$scope', '$sce', '$http', 'userService', '$window', 
+        function ($scope, $sce, $http, userService, $window) {
+        
+        var currentUser = userService.currentUser();
+        if (currentUser['moodleToken'] === undefined || currentUser['moodleID'] === undefined) {
+            $window.location.href = "#!/moodleintegration";
+        }
         
         $http.get("https://learn.fmi.uni-sofia.bg/webservice/rest/server.php?wstoken=" + userService.currentUser()['moodleToken'] + "&wsfunction=mod_forum_get_forums_by_courses&moodlewsrestformat=json")
             .then(function(response) {

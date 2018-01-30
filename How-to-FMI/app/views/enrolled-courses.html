@@ -1,5 +1,5 @@
-<div id="profileView">
-	<div class="mainView" id="profile-content">
+<div id="events-notifications">
+	<div class="mainView">
 		<br>
 		<h1>Записани курсове</h1>
 		<span class="row" ng-repeat="course in courses">
@@ -7,7 +7,7 @@
 				<h4>
 					<a href="https://learn.fmi.uni-sofia.bg/course/view.php?id={{ course.id }}"><b> {{ course.fullname }} </b></a>
 				</h4>
-				<p ng-show="{{course.summary !== ''}}"><b><u>Oписание:</u></b> {{ course.summary }} </p>
+				<p ng-show="{{course.summary !== ''}}"> {{ course.summary }} </p>
 			</div>
 			<hr>
 		</span>
