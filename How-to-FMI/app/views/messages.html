@@ -1,0 +1,22 @@
+<div navigationpath></div>
+<div id="events-notifications">
+    <div class="mainView">
+      	<h1>Съобщения</h1>
+      	<span class="row" ng-repeat="message in messages" ng-show="{{ error === undefined }}">
+			<div class="single-course-div">
+				<h4>
+					<a href="https://learn.fmi.uni-sofia.bg/message/index.php"><b> {{ message.subject }} </b></a>
+				</h4>
+				<p>
+					<b><u>Текст:</u></b>
+					<div ng-bind-html="message.text"></div>
+				</p>
+			</div>
+			<hr>
+		</span>
+
+		<span class="row">
+			{{ error }}
+		</span>
+    </div>
+</div>
