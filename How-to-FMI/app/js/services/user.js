@@ -22,9 +22,9 @@ angular.module('htfmi')
                 });
 
             } else {
-                console.log({data: {email: email, password: password}});
                 UserResource.log({data: {email: email, password: password}}, (userData) => {
                     $sessionStorage.currentUser = userData;
+                    $location.path("/home");
                 }, (err) => {
                     error = err;
                 });

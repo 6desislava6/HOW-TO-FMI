@@ -17,11 +17,8 @@ angular.module('htfmi')
 
         $scope.login = function () {
             var user = userService.login($scope.email, $scope.password);
-            console.log(user);
             if (user.error) {
                 $scope.error = error;
-            } else {
-                $location.path("#/home");
             }
         };
 
