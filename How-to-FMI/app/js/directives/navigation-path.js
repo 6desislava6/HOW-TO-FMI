@@ -21,7 +21,8 @@ angular.module('htfmi')
                     'all-courses': 'Курсове',
                     'faq': 'Често задавани въпроси',
                     'materials': 'Материали',
-                    'jobs': 'Обяви за работа и стаж'
+                    'jobs': 'Обяви за работа и стаж',
+                    'messages': 'Съобщения'
                 };
 
                 var places = $location.path().split('/').filter((v) => {

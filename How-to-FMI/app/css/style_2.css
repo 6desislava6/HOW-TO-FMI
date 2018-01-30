@@ -181,8 +181,13 @@ input[type=button]:hover {
 	padding-bottom: 1rem;
 }
 
+.single-course-div {
+	padding: 1rem;
+}
+
 .single-course-div:hover {
 	background-color: white;
+	border-radius: 2rem;
 }
 
 #filters > h4 {

@@ -1,0 +1,21 @@
+<div class="register-div" ng-class="{error: errorOnRegister}">
+    <h1>Интеграция с Moodle</h1>
+    <div ng-if="errorOnRegister">
+        {{errorOnRegister}}
+    </div>
+    <form name="register-form" class="register-form" ng-submit="integrateMoodle()">
+        <label for="username">Потребителско име в Moodle: <span style="color: red">*</span></label>
+        <input ng-model="username" name="username" type="text" placeholder="Имейл/потребителско име" autofocus required oninvalid="this.setCustomValidity('Полето е задължително.')" oninput="setCustomValidity('')">
+
+        <label for="password">Парола в Moodle: <span style="color: red">*</span></label>
+        <input ng-model="password" name="password" type="password" placeholder="Парола" required oninvalid="this.setCustomValidity('Полето е задължително.')" aria-required="true" dir="auto" title oninput="setCustomValidity('')">
+
+        <br>
+        <input type="submit" value="Интегрирай профил">
+    </form>
+    <div>
+        <div ng-repeat="error in errors">
+            {{error}}
+        </div>
+    </div>
+</div>

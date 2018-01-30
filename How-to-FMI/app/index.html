@@ -49,6 +49,7 @@
     <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="lib/angular-facebook/lib/angular-facebook.js"></script>
     <script src="lib/ngstorage/ngStorage.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.js"></script>
 
     <!-- Styles -->
     <!-- bower:css -->
@@ -89,6 +90,9 @@
     <script src="js/controllers/schedule-degree-controller.js"></script>
     <script src="js/controllers/profile-controller.js"></script>
     <script src="js/controllers/user-registration-controller.js"></script>
+    <script src="js/controllers/enrolled-courses-controller.js"></script>
+    <script src="js/controllers/moodle-integration-controller.js"></script>
+    <script src="js/controllers/messages-controller.js"></script>
 
     <!--Services-->
     <script src="js/services/resources.js"></script>
@@ -124,7 +128,7 @@
           <li><a class="hover-underline" href="#!/education">Обучение</a></li>
           <li><a class="hover-underline" href="#!/calendar">Календар</a></li>
           <li><a class="hover-underline" href="#!/forum">Форум</a></li>
-          <li><a class="hover-underline" href="#!/jobs">Работа</a></li>
+          <li><a class="hover-underline" href="#!/enrolled">Курсове</a></li>
           <li><a class="hover-underline" href="#!/students-info">Кандидат-студенти</a></li>
         </ul>
         <div>
@@ -133,7 +137,7 @@
             <button id="search-button" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
           </form>
           <a href="#!/notifications" id="notifications-bell"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span></a>
-          <a href="/" id="messages"><img src="resources/images/envelope.png" alt=""></span></a>
+          <a href="#!/messages" id="messages"><img src="resources/images/envelope.png" alt=""></span></a>
           <div class="dropdown">
             <span onclick="dropdown()" class="glyphicon glyphicon-chevron-down dropbtn" aria-hidden="true"></span>
             <div id="nav-dropdown" class="dropdown-content">
@@ -143,7 +147,7 @@
               <a href="#!/login">Изход</a>
             </div>
           </div>
-          <a href="#!/profile"><img ng-src="{{profilePicture}}" alt=""></a>
+          <a href="#!/profile/:profilemenu"><img ng-src="{{profilePicture}}" alt=""></a>
         </div>
 
       </nav>
