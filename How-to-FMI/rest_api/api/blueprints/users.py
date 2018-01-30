@@ -115,7 +115,7 @@ class MoodleIntegration(Resource):
         if user is None:
             return False;
 
-        mongo.db.users.update({ "email": data['email'] }, { "$set": {"moodleToken": data['moodleToken']}}, upsert = False)
+        mongo.db.users.update({ "email": data['email'] }, { "$set": {"moodleToken": data['moodleToken'], "moodleID": data['moodleID']}}, upsert = False)
         
         return data;
 

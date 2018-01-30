@@ -23,7 +23,8 @@
     "fullcalendar": "^3.4.0",
     "angular-ui-calendar": "^1.0.2",
     "daypilot": "*",
-    "ngstorage": "^0.3.11"
+    "ngstorage": "^0.3.11",
+    "angular-sanitize": "^1.6.8"
   },
   "resolutions": {
     "angular": "^1.6.3"

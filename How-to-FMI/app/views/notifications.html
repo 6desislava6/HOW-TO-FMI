@@ -1,9 +1,19 @@
-<div navigationpath></div>
 <div id="events-notifications">
-    <div class="mainView">
-      <h1 class="feed-title">Известия</h1>
-      <div feed class="notifications-feed"  id="notifications-feed-main" news="notifications"></div>    
-      <div class="loader"></div>
-    </div>
+	<div class="mainView">
+		<h1>Известия</h1>
+		<span class="row" ng-repeat="discussion in discussions">
+				<div class="single-course-div">
+					<h4>
+						<a href="https://learn.fmi.uni-sofia.bg/mod/forum/discuss.php?d={{ discussion.discussion }}"><b> {{ discussion.name }} </b></a>
+					</h4>
+					<p>
+						<span ng-bind-html="discussion.message"></span> 
+					</p>
+					<p><b>Created: </b> 
+						{{ discussion.timemodified }} 
+					</p>
+				</div>
+				<hr>
+			</span>
+	</div>
 </div>
-

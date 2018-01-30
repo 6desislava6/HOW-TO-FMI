@@ -21,16 +21,27 @@ angular.module('htfmi')
                      .then(function(response) {
                         var data = response.data;
                         if (data['error'] === undefined) {
-                            var userEmail = userService.currentUser()['email'];
-                            MoodleIntegration.integrateMoodle({data: {email: userEmail, moodleToken: data['token']}},
-                                response => {
-                                    console.log(response);
-                                    $sessionStorage.currentUser.moodleToken = data['token'];
-                                    $window.location.href = "#!/enrolled";
-                                }, error => {
-                                    $scope.errorOnRegister = error.data.message;
-                                    console.log($scope.errorOnRegister);
-                                });
+                            $http.get("https://learn.fmi.uni-sofia.bg/webservice/rest/server.php?wstoken=" + data['token'] + "&wsfunction=core_webservice_get_site_info&moodlewsrestformat=json")
+                                 .then(function(response) {
+                                    var userInfoData = response.data;
+                                    if (data['error'] === undefined) {
+                                        var userEmail = userService.currentUser()['email'];
+                                        MoodleIntegration.integrateMoodle({data: {email: userEmail, moodleToken: data['token'], moodleID: userInfoData['userid']}},
+                                            response => {
+                                                console.log(response);
+                                                $sessionStorage.currentUser.moodleToken = data['token'];
+                                                $sessionStorage.currentUser.moodleID = userInfoData['userid'];
+                                                $window.location.href = "#!/enrolled";
+                                            }, error => {
+                                                $scope.errorOnRegister = error.data.message;
+                                                console.log($scope.errorOnRegister);
+                                            });    
+                                    } else {
+                                        $scope.errors.push(data['error']);
+                                    }
+                                    
+                                    });
+                            
                         } else {
                             $scope.errors.push(data['error']);
                         }
