@@ -1,93 +1,49 @@
 <div class="container mainView">
 
-    <div class="row">
+  <div class="row">
 
-        <div class="col-lg-12">
-            <h1 class="page-header">Оценки
-            </h1>
+      <div class="col-lg-12">
+          <h1 class="page-header">Оценки</h1>
   </div><!-- /.col-lg-6 -->
-  
-  <h4><span class="label label-warning">2016-2017</span></h4>
-  <h4><span class="label label-primary">Зимен  семестър</span></h4>
-  
+
+
+  <!-- Here! -->
+<div class="loader" ng-if="loading"></div>
+<form id="login-form" class="login-column">
+    Susi username:
+    <input type="text" ng-model="susiUsername">
+    Susi password:
+    <input type="password" ng-model="password">
+    <button ng-click="getGrades()">Вход</button>
+</form>
+
+<div ng-repeat='sem in grades'>
+  <h4><span ng-if="$index == 0" class="label label-warning">2014-2015</span></h4>
+  <h4><span ng-if="$index == 1" class="label label-warning">2015-2016</span></h4>
+  <h4><span ng-if="$index == 2" class="label label-warning">2016-2017</span></h4>
+  <h4><span ng-if="$index == 3" class="label label-warning">2017-2018</span></h4>
   <table class="table table-striped table-bordered">
-    <thead>
-      <tr>
-        <th>Предмет</th>
-        <th>Преподавател</th>
-        <th>Вид</th>
-		<th>Оценка</th>
-		<th>Кредити</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Алгебра 1</td>
-        <td>доц. Пл. Сидеров</td>
-        <td>Задължителен</td>
-		<td>6.00</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>ДИС 1</td>
-        <td>доц. Вл. Бабев</td>
-        <td>Задължителен</td>
-		 <td>6.00</td>
-        <td>5</td>
-      </tr>
-      <tr>
-        <td>ДС 1</td>
-        <td>доц. Дичев</td>
-        <td>Задължителен</td>
-		 <td>6.00</td>
-        <td>2</td>
-      </tr>
+    <tr>
+      <th>Предмет</th>
+      <th>Преподавател</th>
+      <th>Вид</th>
+      <th>Оценка</th>
+      <th>Кредити</th>
+    </tr>
 
-	</tbody>
+      <tr ng-repeat="item in sem">
+        <td class="col-sm-6">{{ item.subject }}</td>
+        <td class="col-sm-4">{{ item.teacher }}</td>
+        <td class="col-sm-4">{{ item.type }}</td>
+        <td class="col-sm-4">{{ item.grade }}</td>
+        <td class="col-sm-4">{{ item.ECTS }}</td>
+      </tr>>
+
+    
   </table>
-  <br>
-  <h4><span class="label label-primary">Летен  семестър</span></h4>
-  
-  <table class="table table-striped table-bordered">
-    <thead>
-	<thead>
-      <tr>
-        <th>Предмет</th>
-        <th>Преподавател</th>
-        <th>Вид</th>
-		<th>Оценка</th>
-		<th>Кредити</th>
-      </tr>
-    </thead>
-	</thead>
-	<tbody>
-      <tr>
-        <td>Алгебра 2</td>
-        <td>д-р. Пл. Сидеров</td>
-        <td>Задължителен</td>
-		<td>6.00</td>
-        <td>3</td>
-      </tr>
-      <tr>
-        <td>ДС 2</td>
-        <td>доц. Дичев</td>
-        <td>Задължителен</td>
-		<td>6.00</td>
-        <td>2</td>
-      </tr>
-      <tr>
-         <td>ДИС 2</td>
-        <td>доц. Дичев</td>
-        <td>Задължителен</td>
-		 <td>6.00</td>
-        <td>2</td>
-      </tr>
-    </tbody>
-  </table>
-
-
-    </div>
 </div>
-	
+
+</div>
+
 <!-- /.container -->
 

@@ -49,7 +49,8 @@ angular.module('htfmi').config(['$routeProvider', function Router($routeProvider
         templateUrl: 'views/404.html'
     }).when('/grades', {
         requireLogin: true,
-        templateUrl: 'views/gradesMain.html'
+        templateUrl: 'views/gradesMain.html',
+        controller: 'GradesController',
     }).when('/grades/electives', {
         requireLogin: true,
         templateUrl: 'views/gradesElectives.html'

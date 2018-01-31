@@ -16,4 +16,10 @@ angular.module('htfmi')
     return $resource(resourceLink, {id: '@_id'}, {
         integrateMoodle: {method: 'POST', url: resourceLink + 'moodle_integration', isArray: false}
     });
+}])
+.factory('SusiResource', ['$resource', function ($resource) {
+	var resourceLink = 'http://0.0.0.0:5000/susi/:susiUser/:susiPassword';
+    return $resource(resourceLink, {susiUser:'@susiUser', susiPassword: '@susiPassword'}, {
+    	get: {method: 'GET', isArray:true},
+    });
 }]);
