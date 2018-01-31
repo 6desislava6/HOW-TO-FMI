@@ -2,7 +2,10 @@
 <div id="events-notifications">
     <div class="mainView">
       	<h1>Съобщения</h1>
-      	<span class="row" ng-repeat="message in messages" ng-show="{{ error === undefined }}">
+      	<span class="row" ng-show="!messages.length">
+      		Все още нямате получени съобщения.
+      	</span>
+      	<span class="row" ng-repeat="message in messages">
 			<div class="single-course-div">
 				<h4>
 					<a href="https://learn.fmi.uni-sofia.bg/message/index.php"><b> {{ message.subject }} </b></a>
